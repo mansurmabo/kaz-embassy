@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'faker'
+gem 'bootstrap-sass'
