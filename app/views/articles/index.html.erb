@@ -1,7 +1,10 @@
+<h2> Последние новости и события</h2>
 <table class="table table-striped">
     <% @articles.each do |article| %>
     <tr>
       <td><%=link_to article.title, article_path(article) %></td>
+      <td><%= article.created_at.strftime('%d.%M.%Y') %></td>
+      <td><%= article.image %></td>
     </tr>
     <% end %>
 </table>

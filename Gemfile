@@ -47,5 +47,7 @@ end
 
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'activeadmin_tinymce'
+gem 'tinymce-rails'
 gem 'faker'
 gem 'bootstrap-sass'

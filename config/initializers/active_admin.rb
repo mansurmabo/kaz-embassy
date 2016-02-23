@@ -1,10 +1,12 @@
 ActiveAdmin.setup do |config|
+  config.register_javascript 'tinymce.js'
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Kaz Emb Kg"
+  config.site_title = "Kaz-Emb"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
