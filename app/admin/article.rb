@@ -1,6 +1,6 @@
 ActiveAdmin.register Article do
 
-  permit_params :title, :text, :image
+  permit_params :title, :content, :image
   index do
     selectable_column
     id_column
