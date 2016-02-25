@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   root 'articles#index'
   resources :articles
   resources :pages
@@ -7,6 +8,4 @@ Rails.application.routes.draw do
 
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  mount ActiveAdmin::Tinymce::Engine => '/', as: 'admin_editor'
-
 end

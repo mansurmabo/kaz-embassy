@@ -11,7 +11,7 @@ ActiveAdmin.register Page do
     f.inputs do
       f.input :title
       f.input :category_id, :as => :select, :collection => Category.all
-      f.input :content, :input_html => { :class => "tinymce" }
+      f.input :content, :as => :ckeditor
     end
     f.actions
   end

@@ -11,8 +11,8 @@ ActiveAdmin.register Article do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :content, :input_html => { :class => "tinymce" }
-      f.input :image
+      f.input :content, :input_html => { :class => "ckeditor" }
+      f.input :image, as: :file
     end
     f.actions
   end

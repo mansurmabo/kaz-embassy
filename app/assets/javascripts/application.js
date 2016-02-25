@@ -1,8 +1,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require ckeditor/init
 //= require turbolinks
-//= require tinymce
-//= require tinymce-jquery
 //= require owl.carousel
 //= require_tree .
