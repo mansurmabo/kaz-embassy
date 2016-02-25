@@ -1,3 +1,41 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #a3b7c6;
+}
+.container {
+  margin-bottom: 20px;
+
+}
+.nav  {
+  background-color: #ffe160;
+  border-radius: 4px;
+
+}
+ul, ol {
+  margin: 0;
+  padding-left: 1.5em;
+  list-style-type: none;
+}
+.top_image {
+  background-color: #ffffff;
+}
+.content {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 10px;
+}
+.owl-carousel {
+  background-color: #fff;
+  border-radius: 4px;
+
+}
+.owl-carousel .item{
+  margin: 3px;
+}
+.owl-carousel .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}

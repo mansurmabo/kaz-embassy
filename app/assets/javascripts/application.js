@@ -4,4 +4,5 @@
 //= require turbolinks
 //= require tinymce
 //= require tinymce-jquery
+//= require owl.carousel
 //= require_tree .
