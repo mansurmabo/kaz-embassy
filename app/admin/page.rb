@@ -4,7 +4,9 @@ ActiveAdmin.register Page do
     selectable_column
     id_column
     column :title
-    column :category
+    column :category do |page|
+      Category.find(page.category_id).name
+    end
     actions
   end
   form do |f|

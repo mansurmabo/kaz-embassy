@@ -1,0 +1,5 @@
+<div class="owl-carousel">
+  <% Slideshow.all.each do |slide| %>
+    <div class="item"><%= image_tag slide.image.url(:medium) %></div>
+  <% end %>
+</div>
