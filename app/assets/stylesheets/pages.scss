@@ -4,6 +4,7 @@
 body {
   background-color: #a3b7c6;
 }
+
 .container {
   margin-bottom: 50px;
 
@@ -11,8 +12,22 @@ body {
 .nav  {
   background-color: #ffe160;
   border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
 
 }
+.nav-pills > li > a {
+  text-decoration: none;
+  color: #337ab7;
+
+
+}
+.nav-pills > li > a:hover {
+  background-color: #fff;
+
+}
+
+
 ul, ol {
   margin: 0;
   padding-left: 1.5em;
@@ -34,6 +49,11 @@ ul, ol {
 
 .top_image {
   background-color: #ffffff;
+}
+.top_image .social img{
+  width: 50px;
+  height: auto;
+
 }
 .content {
   background-color: #ffffff;

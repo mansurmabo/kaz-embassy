@@ -16,7 +16,7 @@
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ffe160;
   position: relative;
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -60,7 +60,7 @@
 
 .submenu {
   display: none;
-  background: #ffffff;
+  background: #ffe160;
   font-size: 14px;
   padding: 0px;
 }
@@ -70,7 +70,7 @@
 .submenu a {
   display: block;
   text-decoration: none;
-  color: #050029;
+  color: #337ab7;
   padding: 10px 10px 10px 42px;
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
@@ -78,5 +78,21 @@
 }
 
 .submenu a:hover {
-  background: #ffe160;
+  background: #ffffff;
+}
+
+.left-images-links {
+  margin: 10px;
+  padding: 5px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.left-images-links img{
+  margin: auto;
+  max-width: 200px;
+}
+.left-images-links img:hover{
+  border: 2px solid;
+  border-color: #ffe160;
 }
