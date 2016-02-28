@@ -9,22 +9,30 @@ body {
   margin-bottom: 50px;
 
 }
-.nav  {
+.nav-pills  {
   background-color: #ffe160;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 700;
 
 }
+
 .nav-pills > li > a {
   text-decoration: none;
   color: #337ab7;
 
-
 }
 .nav-pills > li > a:hover {
   background-color: #fff;
-
+}
+.nav-tabs  {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav-tabs > li > a {
+  text-decoration: none;
+  color: #337ab7;
 }
 
 
@@ -58,6 +66,7 @@ ul, ol {
 .content {
   background-color: #ffffff;
   border-radius: 4px;
+  font-size: 14px;
   padding: 10px;
 }
 .owl-carousel {

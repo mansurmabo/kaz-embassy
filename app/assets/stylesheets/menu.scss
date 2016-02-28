@@ -82,14 +82,14 @@
 }
 
 .left-images-links {
-  margin: 10px;
   padding: 5px;
   overflow-y: auto;
   max-height: 400px;
 }
 
 .left-images-links img{
-  margin: auto;
+  display: block;
+  margin: 10px auto;
   max-width: 200px;
 }
 .left-images-links img:hover{

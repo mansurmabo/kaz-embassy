@@ -1,11 +1,9 @@
-<h2> Последние новости и события</h2>
-<table class="table table-striped">
-    <% @articles.each do |article| %>
-    <tr>
-      <td>
-        <%= image_tag article.image.url(:thumb) unless article.image_file_name.nil?%></td>
-      <td><%=link_to article.title, article_path(article) %></td>
-      <td><%= article.created_at.strftime('%d.%m.%Y') %></td>
-    </tr>
-    <% end %>
-</table>
+<ul class="nav nav-tabs"   >
+  <% @types.each do |type| %>
+    <li role="presentation" ><%= link_to type.name, get_news_path(type), remote: true %></li>
+  <% end %>
+</ul>
+
+<div id="get_articles">
+  <%= render "articles/articles_table" %>
+</div>
