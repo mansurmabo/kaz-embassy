@@ -1,8 +1,3 @@
-<% if @type.nil? %>
-    <h2> Последние новости и события</h2>
-<% else %>
-    <h2><%= @type.name %></h2>
-<% end %>
 <table class="table table-hover">
   <% @articles.each do |article| %>
       <tr>
@@ -13,5 +8,7 @@
         <td><%= article.created_at.strftime('%d.%m.%Y') %></td>
       </tr>
   <% end %>
-
 </table>
+  <div class="paginate">
+    <%= paginate @articles %>
+  </div>

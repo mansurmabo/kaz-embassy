@@ -1,6 +1,6 @@
 <h3><%= @article.title %></h3>
 <div class="article-image">
-  <%= image_tag @article.image.url(:medium) unless article.image_file_name.nil? %>
+  <%= image_tag @article.image.url(:medium) unless @article.image_file_name.nil? %>
 </div>
 <div>
   <%= raw @article.content %>

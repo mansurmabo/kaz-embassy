@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs"   >
+<ul class="nav nav-tabs">
   <% @types.each do |type| %>
     <li role="presentation" ><%= link_to type.name, get_news_path(type), remote: true %></li>
   <% end %>

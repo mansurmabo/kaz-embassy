@@ -1,1 +1,2 @@
 $('#get_articles').html('<%= j render 'articles/articles_table' %>');
+$('.paginate').html('<%= j(paginate@articles, remote: true) %>')
