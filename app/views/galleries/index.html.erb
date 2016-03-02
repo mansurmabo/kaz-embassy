@@ -1,0 +1,5 @@
+<div id="gallery">
+  <% @gallery.each do |pic| %>
+      <div class="pic"><%= image_tag pic.image.url(:medium) %></div>
+  <% end %>
+</div>

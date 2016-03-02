@@ -4,4 +4,6 @@
 //= require ckeditor/init
 //= require turbolinks
 //= require owl.carousel
+//= require lib/freewall
+
 //= require_tree .

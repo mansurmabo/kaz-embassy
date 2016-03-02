@@ -93,9 +93,19 @@
   max-width: 200px;
 }
 .left-images-links img:hover{
-  border: 2px solid;
-  border-color: #ffe160;
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
 }
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .left-images-links::-webkit-scrollbar-track
 {
