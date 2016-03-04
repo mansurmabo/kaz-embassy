@@ -1,5 +1,6 @@
 ActiveAdmin.register Article do
-
+  menu priority: 2
+  config.per_page = 10
   permit_params :title, :content, :image, :created_at, :type_id
   index do
     selectable_column
@@ -10,7 +11,6 @@ ActiveAdmin.register Article do
     column :title
     column :type_id do |article|
       Type.find(article.type_id).name
-
     end
     column :created_at
     actions

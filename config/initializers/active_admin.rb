@@ -1,49 +1,19 @@
 ActiveAdmin.setup do |config|
   config.register_javascript 'ckeditor/init.js'
-  # == Site Title
-  #
-  # Set the title that is displayed on the main layout
-  # for each of the active admin pages.
-  #
   config.site_title = "Kaz-Emb"
-
-  # Set the link url for the title. For example, to take
-  # users to your main site. Defaults to no link.
-  #
-  # config.site_title_link = "/"
-
-  # Set an optional image to be displayed for the header
-  # instead of a string (overrides :site_title)
-  #
-  # Note: Aim for an image that's 21px high so it fits in the header.
-  #
-  # config.site_title_image = "logo.png"
-
-  # == Default Namespace
-  #
-  # Set the default namespace each administration resource
-  # will be added to.
-  #
-  # eg:
-  #   config.default_namespace = :hello_world
-  #
-  # This will create resources in the HelloWorld module and
-  # will namespace routes to /hello_world/*
-  #
-  # To set no namespace by default, use:
-  #   config.default_namespace = false
-  #
-  # Default:
-  # config.default_namespace = :admin
-  #
-  # You can customize the settings for each namespace by using
-  # a namespace block. For example, to change the site title
-  # within a namespace:
-  #
-  #   config.namespace :admin do |admin|
-  #     admin.site_title = "Custom Admin Title"
+  config.show_comments_in_menu = false
+  # config.namespace :admin do |admin|
+  #   admin.build_menu do |menu|
+  #     menu.add :label => "News", priority: 0 do |news|
+  #       news.add :label => "Article", :url => "/admin/articles"
+  #       news.add :label => "Type", :url => "/admin/types"
+  #       end
+  #     menu.add :label => "Content", priority: 1 do |pages|
+  #       pages.add :label => "Page", :url => "/admin/pages"
+  #       pages.add :label => "Category", :url => "/admin/categories"
+  #     end
   #   end
-  #
+  # end
   # This will ONLY change the title for the admin section. Other
   # namespaces will continue to use the main "site_title" configuration.
 

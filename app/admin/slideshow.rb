@@ -1,4 +1,6 @@
 ActiveAdmin.register Slideshow do
+  config.per_page = 10
+
   permit_params :title, :image
 
   index do

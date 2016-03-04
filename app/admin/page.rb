@@ -1,4 +1,6 @@
 ActiveAdmin.register Page do
+  menu priority: 4
+  config.per_page = 10
   permit_params :title, :content, :category_id
   index do
     selectable_column
