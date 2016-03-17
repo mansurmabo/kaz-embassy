@@ -22,7 +22,9 @@ en:
   hello: "Hello world"
   views:
     pagination:
+      first: "&laquo;"
       previous: "&lt;"
       next: "&gt;"
-      truncate: "..."
+      last: "&raquo;"
+      truncate: "&hellip;"
 
