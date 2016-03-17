@@ -1,0 +1,21 @@
+.footer {
+  background-color: #fff;
+  border-radius: 4px;
+}
+.footer img{
+  display: block;
+  margin: 20px auto;
+}
+.footer img:hover{
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
