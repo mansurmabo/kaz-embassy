@@ -33,9 +33,9 @@
     </div>
     <div class="col-xs-14 col-md-9">
       <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="/">Главная</a></li>
-        <li role="presentation"><a href="">Контакты</a></li>
-        <li role="presentation"><a href="/galleries/index">Галерея</a></li>
+        <li class='<%= "active" if current_page?(root_path) %>'><a href="/">Главная</a></li>
+        <li ><a href="#">Контакты</a></li>
+        <li class='<%= "active" if current_page?(galleries_path) %>'><a href="/galleries">Галерея</a></li>
       </ul>
         <div class="content">
           <%= yield %>
