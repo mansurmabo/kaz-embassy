@@ -1,7 +1,19 @@
-.center img {
-  display: block;
-  margin: 0 auto;
+.mosaicflow__item {
+  padding:3px;
 }
-.center h2{
-  text-align: center;
+.mosaicflow__column {
+  float:left;
+}
+.mosaicflow__item img {
+  display:block;
+  width:100%;
+  height:auto;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.mosaicflow__item img:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }

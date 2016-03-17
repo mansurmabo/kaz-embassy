@@ -4,5 +4,6 @@
 //= require ckeditor/init
 //= require turbolinks
 //= require owl.carousel
+//= require lib/jquery.mosaicflow.min.js
 
 //= require_tree .

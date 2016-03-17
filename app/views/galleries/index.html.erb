@@ -1,5 +1,5 @@
-<div class="row">
+<div class="clearfix mosaicflow">
   <% @gallery.each do |pic| %>
-    <div class="col-md-4"><%= link_to( image_tag( pic.image.url(:medium)) , gallery_path(pic) )%></div>
+    <div class="mosaicflow__item"><%= link_to( image_tag( pic.image.url(:medium)) , gallery_path(pic) )%></div>
   <% end %>
 </div>
