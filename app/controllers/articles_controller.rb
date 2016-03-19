@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def get_news
     @type = Type.find(params[:id])
-    @articles = Article.where(type_id: @type).order(created_at: :desc).page(params[:page]).per(20)
+    @articles = Article.where(type_id: @type).order(created_at: :desc).page(params[:page]).per(2)
   end
 
   def show
