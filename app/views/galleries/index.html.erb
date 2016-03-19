@@ -1,5 +1,20 @@
+<%= javascript_include_tag "lib/jquery.mosaicflow.min" %>
+
 <div class="clearfix mosaicflow">
   <% @gallery.each do |pic| %>
     <div class="mosaicflow__item"><%= link_to( image_tag( pic.image.url(:medium)) , gallery_path(pic) )%></div>
   <% end %>
 </div>
+
+<script>
+    $(function() {
+        var mosaic = $( ".mosaicflow" ).mosaicflow( {
+            itemSelector: ".item",
+            minItemWidth: 300
+        });
+
+        setTimeout(function(){
+            mosaic.mosaicflow('refill');
+        },300);
+    });
+</script>
