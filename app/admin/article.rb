@@ -1,6 +1,6 @@
 ActiveAdmin.register Article do
   menu priority: 2
-  config.per_page = 10
+  config.per_page = 20
   permit_params :title, :content, :image, :created_at, :type_id
   index do
     selectable_column
