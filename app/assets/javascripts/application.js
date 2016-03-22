@@ -4,5 +4,7 @@
 //= require ckeditor/init
 //= require owl.carousel
 // require lib/jquery.mosaicflow.min.js
-
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ru.js
 //= require_tree .
