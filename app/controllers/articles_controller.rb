@@ -12,4 +12,19 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
+
+  def show_slideshow
+    @articles = Article.all
+    @slides = get_slideshow(@articles)
+  end
+
+  private
+  def get_slideshow(articles)
+    slideshow = []
+    articles.each do |article|
+      slideshow << article if article.image.present?
+    end
+    slideshow
+  end
+
 end

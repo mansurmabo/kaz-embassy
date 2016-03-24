@@ -10,7 +10,7 @@ ActiveAdmin.register Article do
     end
     column :title
     column :type_id do |article|
-      Type.find(article.type_id).name
+      Type.find(article.type_id).name if article.type_id.present?
     end
     column :created_at
     actions

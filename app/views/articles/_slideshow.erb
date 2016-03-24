@@ -1,0 +1,10 @@
+<div class="owl-carousel">
+  <div class="item"><%= image_tag asset_path('1.jpg') %></div>
+  <div class="item"><%= image_tag asset_path('2.jpg') %></div>
+  <% slides = Article.order(created_at: :desc).first(10) %>
+  <% slides.each do |slide| %>
+    <% if slide.image.present? %>
+      <div class="item"><%=link_to image_tag(slide.image.url(:medium)), article_path(slide) %></div>
+    <% end %>
+  <% end %>
+</div>
