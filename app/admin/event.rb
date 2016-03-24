@@ -1,6 +1,5 @@
 ActiveAdmin.register Event do
-
-  menu priority: 7
+  menu priority: 10
   config.per_page = 20
   permit_params :title, :date, :image, :site
   index do
@@ -17,7 +16,7 @@ ActiveAdmin.register Event do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :date
+      f.input :date, :as => :datepicker
       f.input :site
       f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))
     end

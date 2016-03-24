@@ -6,9 +6,9 @@ $(document).ready(function() {
             }
         ],
         header: {
-            left: 'prev,next today',
+            left: 'prevYear, prev,',
             center: 'title',
-            right: 'month,agendaWeek,agendaDay'
+            right: 'next, nextYear'
         },
         defaultView: 'month',
         editable: false,

@@ -22,7 +22,7 @@ ActiveAdmin.register Article do
 
       f.input :content, :input_html => { :class => "ckeditor" }
       f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))
-      f.input :created_at
+      f.input :created_at, :as => :datepicker
     end
     f.actions
   end
