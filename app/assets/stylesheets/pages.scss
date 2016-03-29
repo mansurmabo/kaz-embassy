@@ -22,6 +22,10 @@ body {
   color: #337ab7;
 
 }
+.dropdown-menu > li > a {
+  text-decoration: none;
+  color: #337ab7;
+}
 .nav-pills > li > a:hover {
   background-color: #fff;
 }

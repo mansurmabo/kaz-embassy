@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'articles#index'
   get 'get_news/:id' => 'articles#get_news', as: :get_news
+  get 'galleries/get_category/:id' => 'galleries#get_category', as: :get_categories
 
   resources :articles
   resources :pages, only: [:index, :show]
