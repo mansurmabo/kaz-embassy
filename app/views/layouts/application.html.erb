@@ -10,21 +10,20 @@
 <body>
 
 <div class="container">
-  <table class="top-image">
-    <tr>
-      <td>
-        <img src="/images/Kaz-Emb.jpg"/>
-      </td>
-      <td>
+  <div class="top">
+      <div class="text">
+        <p>Посольство Республики Казахстан в Кыргызской Республике</p>
+      </div>
+      <div class="top-image">
+        <img src="<%= image_url("header.png") %>" alt="kaz-emb.kg">
+      </div>
         <div class="social">
           <a href="https://www.facebook.com/kaz.embassykg/" target="_blank"><img src="/images/icons/facebook.png"/></a>
           <a href="https://twitter.com/kazembassykg" target="_blank"><img src="/images/icons/twitter.png"/></a>
           <a href="https://www.flickr.com/photos/kazembassykg" target="_blank"><img src="/images/icons/flickr.png"/></a>
           <a href="https://www.youtube.com/channel/UCcnpGGodLIPZwOgeVUPfCrw" target="_blank"><img src="/images/icons/youtube.png"/></a>
         </div>
-      </td>
-    </tr>
-  </table>
+  </div>
   <div>
     <%= render "articles/slideshow" %>
   </div>
@@ -47,6 +46,18 @@
               <li><%=link_to cat.title, get_categories_path(cat) %></li>
             <% end %>
           </ul>
+        </li>
+        <li class="pull-right">
+          <%= form_tag("/search", method: "get", class: "form-horizontal") do  %>
+            <div class="form-group">
+              <div class="col-md-8">
+                <%= text_field_tag :q, params[:q], class: 'form-control' %>
+              </div>
+              <div class="col-md-3">
+                <%= submit_tag "поиск", name: nil, class: 'btn btn-primary' %>
+              </div>
+            </div>
+          <% end %>
         </li>
       </ul>
         <div class="content">
