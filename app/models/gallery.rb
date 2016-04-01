@@ -1,5 +1,4 @@
 class Gallery < ActiveRecord::Base
-  searchkick
 
   belongs_to :images_category
 
@@ -8,4 +7,3 @@ class Gallery < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end
 
-Gallery.reindex
