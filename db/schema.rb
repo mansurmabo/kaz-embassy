@@ -67,7 +67,8 @@ ActiveRecord::Schema.define(version: 20160325173255) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
-    t.date     "date"
+    t.date     "date_st"
+    t.date     "date_end"
     t.string   "image"
     t.string   "site"
     t.datetime "created_at",         null: false
@@ -87,10 +88,10 @@ ActiveRecord::Schema.define(version: 20160325173255) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "imagescategory_id"
+    t.integer  "images_category_id"
   end
 
-  add_index "galleries", ["imagescategory_id"], name: "index_galleries_on_imagescategory_id"
+  add_index "galleries", ["images_category_id"], name: "index_galleries_on_images_category_id"
 
   create_table "images_categories", force: :cascade do |t|
     t.string   "title"
@@ -108,17 +109,6 @@ ActiveRecord::Schema.define(version: 20160325173255) do
   end
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id"
-
-  create_table "slideshows", force: :cascade do |t|
-    t.string   "title"
-    t.string   "image"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
 
   create_table "third_parties", force: :cascade do |t|
     t.string   "link"
