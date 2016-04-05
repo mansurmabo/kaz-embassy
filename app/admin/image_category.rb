@@ -1,6 +1,6 @@
 ActiveAdmin.register ImagesCategory do
 
-  menu priority: 10
+  menu false
   permit_params :title
   index do
     selectable_column

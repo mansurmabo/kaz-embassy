@@ -1,6 +1,7 @@
 ActiveAdmin.register Article do
-  menu priority: 2
+  menu false
   config.per_page = 20
+
   permit_params :title, :content, :image, :created_at, :type_id
   index do
     selectable_column
@@ -18,7 +19,7 @@ ActiveAdmin.register Article do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :type_id, :as => :select, :collection => Type.all
+      f.input :type_id, :as => :select, :collection => Type.all, :prompt => 'Выберите категорию новостей'
 
       f.input :content, :input_html => { :class => "ckeditor" }
       f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))

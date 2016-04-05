@@ -1,5 +1,5 @@
 ActiveAdmin.register Page do
-  menu priority: 4
+  menu false
   config.per_page = 20
   permit_params :title, :content, :category_id
   index do

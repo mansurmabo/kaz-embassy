@@ -1,5 +1,5 @@
 ActiveAdmin.register Event do
-  menu priority: 10
+  menu priority: 4
   config.per_page = 20
   permit_params :title, :date_st, :date_end, :image, :site
   index do

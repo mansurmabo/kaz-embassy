@@ -62,7 +62,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 #gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 #gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
-# gem 'searchkick'
+gem 'searchkick'
 gem 'puma'
 gem 'rails_12factor', group: :production
 ruby "2.2.1"

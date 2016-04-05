@@ -1,19 +1,25 @@
 ActiveAdmin.setup do |config|
   config.register_javascript 'ckeditor/init.js'
-  config.site_title = "Kaz-Emb"
+  config.site_title = "kaz-emb.kg"
   config.show_comments_in_menu = false
-  # config.namespace :admin do |admin|
-  #   admin.build_menu do |menu|
-  #     menu.add :label => "News", priority: 0 do |news|
-  #       news.add :label => "Article", :url => "/admin/articles"
-  #       news.add :label => "Type", :url => "/admin/types"
-  #       end
-  #     menu.add :label => "Content", priority: 1 do |pages|
-  #       pages.add :label => "Page", :url => "/admin/pages"
-  #       pages.add :label => "Category", :url => "/admin/categories"
-  #     end
-  #   end
-  # end
+
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add :label => "News", priority: 1 do |news|
+        news.add :label => "Articles", :url => "/admin/articles"
+        news.add :label => "Types", :url => "/admin/types"
+      end
+      menu.add :label => "Content", priority: 2 do |pages|
+        pages.add :label => "Pages", :url => "/admin/pages"
+        pages.add :label => "Categories", :url => "/admin/categories"
+      end
+      menu.add :label => "Gallery", priority: 3 do |cat|
+        cat.add :label => "Images", :url => "/admin/galleries"
+        cat.add :label => "Categories", :url => "/admin/images_categories"
+      end
+    end
+  end
+
   # This will ONLY change the title for the admin section. Other
   # namespaces will continue to use the main "site_title" configuration.
 

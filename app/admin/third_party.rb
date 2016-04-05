@@ -1,7 +1,6 @@
 ActiveAdmin.register ThirdParty do
-
+  menu priority: 5
   permit_params :link, :image
-
   index do
     selectable_column
     id_column

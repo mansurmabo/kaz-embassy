@@ -1,5 +1,5 @@
 ActiveAdmin.register Category do
-  menu priority: 5
+  menu false
   permit_params :name
   index do
     selectable_column
