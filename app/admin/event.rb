@@ -1,7 +1,7 @@
 ActiveAdmin.register Event do
   menu priority: 10
   config.per_page = 20
-  permit_params :title, :date_st, :date_st, :image, :site
+  permit_params :title, :date_st, :date_end, :image, :site
   index do
     selectable_column
     id_column

@@ -3,6 +3,6 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :title, :presence => true
-  validates :date, :presence => true
+  validates :date_st, :presence => true
 
 end

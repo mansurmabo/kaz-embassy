@@ -1,9 +1,5 @@
 <div class="left-images-links">
   <ul>
-    <li><a href="http://www.kazakhstanunsc.com/" target="_blank"><img src="/images/global-sec.jpg"/></a></li>
-    <li><a href="http://www.e-history.kz/" target="_blank"><img src="/images/histor-kz.jpg"/></a></li>
-    <li><a href="http://www.theatomproject.org/ru" target="_blank"><img src="/images/the-prject-atom.jpg"/></a></li>
-    <li><a href="http://inform.kz/" target="_blank"><img src="/images/kaz-inform.jpg"/></a></li>
     <% ThirdParty.all.each do |imagelink| %>
         <li><%= link_to image_tag(imagelink.image.url(:thumb)), imagelink.link, target: '_blank' %></li>
     <% end %>
