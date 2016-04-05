@@ -7,6 +7,11 @@ ActiveAdmin.register Type do
     column :name
     actions
   end
+  show do
+    attributes_table do
+      row :name
+    end
+  end
   form do |f|
     f.inputs do
       f.input :name

@@ -13,6 +13,13 @@ ActiveAdmin.register Gallery do
     end
     actions
   end
+  show do
+    attributes_table do
+      row :image do |img|
+        image_tag(img.image.url(:medium))
+      end
+    end
+  end
   form do |f|
     f.inputs do
       f.input :title

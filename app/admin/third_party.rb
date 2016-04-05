@@ -10,6 +10,14 @@ ActiveAdmin.register ThirdParty do
     column :link
     actions
   end
+  show do
+    attributes_table do
+      row :image do |img|
+        image_tag(img.image.url(:medium))
+      end
+      row :link
+    end
+  end
   form do |f|
     f.inputs do
       f.input :link

@@ -8,6 +8,11 @@ ActiveAdmin.register ImagesCategory do
     column :title
     actions
   end
+  show do
+    attributes_table do
+      row :title
+    end
+  end
   form do |f|
     f.inputs do
       f.input :title

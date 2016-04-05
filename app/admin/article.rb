@@ -16,6 +16,14 @@ ActiveAdmin.register Article do
     column :created_at
     actions
   end
+  show do
+    attributes_table do
+      row :image do |img|
+        image_tag(img.image.url(:medium))
+      end
+      row :content
+    end
+  end
   form do |f|
     f.inputs do
       f.input :title

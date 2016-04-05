@@ -14,6 +14,16 @@ ActiveAdmin.register Event do
     column :site
     actions
   end
+  show do
+    attributes_table do
+      row :image do |img|
+        image_tag(img.image.url(:medium))
+      end
+      row :site
+      row :date_st
+      row :date_end
+    end
+  end
   form do |f|
     f.inputs do
       f.input :title
