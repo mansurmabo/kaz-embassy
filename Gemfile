@@ -50,6 +50,14 @@ group :development do
   gem 'spring'
 end
 
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+end
+
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'ckeditor'
@@ -64,5 +72,3 @@ gem 'momentjs-rails'
 #gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'searchkick'
 gem 'puma'
-gem 'rails_12factor', group: :production
-ruby "2.2.1"
