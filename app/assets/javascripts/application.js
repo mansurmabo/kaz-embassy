@@ -3,8 +3,11 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require owl.carousel
-// require lib/jquery.mosaicflow.min.js
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/lang/ru.js
-//= require_tree .
+//= require active_admin.js
+//= require events
+//= require gallery
+//= require menu
+//= require slideshow
