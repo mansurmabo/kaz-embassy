@@ -12,6 +12,9 @@ module KazEmbKg
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     #config.assets.initialize_on_precompile = false
+    config.assets.paths << Rails.root.join('assets')
+    config.assets.enabled = true
+    config.serve_static_assets = true
     config.assets.precompile += %w[lib/jquery.mosaicflow.min.js application.js application.scss active_admin.scss ]
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
