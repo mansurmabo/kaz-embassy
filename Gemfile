@@ -67,3 +67,5 @@ gem 'momentjs-rails'
 #gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 #gem 'searchkick'
 gem 'puma'
+
+gem 'dotenv-rails', :groups => [:development, :test]
