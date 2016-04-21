@@ -1,4 +1,4 @@
 //= require active_admin/base
-$('.ckeditor').ckeditor({
-    // optional config
-});
+//$('.ckeditor').ckeditor({
+//    // optional config
+//});
