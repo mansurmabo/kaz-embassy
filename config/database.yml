@@ -12,8 +12,8 @@ test:
 
 production:
   adapter: postgresql
-  username: deploy
-  password: 220888ok
-  database: deploy
+  username: mansur
+  password: 1234
+  database: mansur
   pool: 15
   timeout: 5000
