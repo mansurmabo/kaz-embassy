@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  #searchkick
+  searchkick
 
   belongs_to :type
   has_attached_file :image, styles: { medium: "300x220#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -9,4 +9,4 @@ class Article < ActiveRecord::Base
   validates :content, :presence => true
 end
 
-#Article.reindex
+Article.reindex
