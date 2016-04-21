@@ -1,7 +1,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require ckeditor/init
+// require ckeditor/init
 //= require owl.carousel
 //= require moment
 //= require fullcalendar
