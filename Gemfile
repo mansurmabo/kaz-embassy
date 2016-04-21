@@ -66,4 +66,4 @@ gem 'momentjs-rails'
 gem 'searchkick'
 gem 'puma'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+#gem 'dotenv-rails', :groups => [:development, :test]
