@@ -18,7 +18,7 @@ class Ability
       can :manage, Event
       can :manage, User, :id => user.id
     else
-      can :manage, :all
+      can :read, :all
     end
 
   end
