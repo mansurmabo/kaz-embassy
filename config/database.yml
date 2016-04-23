@@ -12,8 +12,8 @@ test:
 
 production:
   adapter: postgresql
-  username: deploy
-  password: 220888ok
+  username: ENV["DB_USERNAME"]
+  password: ENV["DB_PASSWORD"]
   database: deploy
   pool: 15
   timeout: 5000
