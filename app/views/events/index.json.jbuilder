@@ -3,4 +3,5 @@ json.array!(@events) do |event|
   json.title event.title + "\n" + event.site
   json.start event.date_st
   json.end event.date_end
+  # json.repeats event.repeat
 end

@@ -1,7 +1,7 @@
 ActiveAdmin.register Event do
   menu priority: 4
   config.per_page = 20
-  permit_params :title, :date_st, :date_end, :image, :site
+  permit_params :title, :repeat, :date_st, :date_end, :image, :site
   index do
     selectable_column
     id_column
@@ -12,6 +12,7 @@ ActiveAdmin.register Event do
     column :date_st
     column :date_end
     column :site
+    column :repeat
     actions
   end
   show do
@@ -22,6 +23,7 @@ ActiveAdmin.register Event do
       row :site
       row :date_st
       row :date_end
+      row :repeat
     end
   end
   form do |f|
@@ -31,6 +33,7 @@ ActiveAdmin.register Event do
       f.input :date_end, :as => :datepicker
       f.input :site
       f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))
+      f.input :repeat
     end
     f.actions
   end
