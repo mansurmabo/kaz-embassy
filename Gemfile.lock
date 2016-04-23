@@ -65,6 +65,7 @@ GEM
       thor (~> 0.19)
     builder (3.2.2)
     byebug (8.2.2)
+    cancancan (1.13.1)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -274,6 +275,7 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre2)
   bootstrap-sass
   byebug
+  cancancan
   capistrano
   capistrano-bundler
   capistrano-rails

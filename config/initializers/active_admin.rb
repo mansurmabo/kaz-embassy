@@ -19,6 +19,9 @@ ActiveAdmin.setup do |config|
       end
     end
   end
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
+
+  config.on_unauthorized_access = :access_denied
 
   # This will ONLY change the title for the admin section. Other
   # namespaces will continue to use the main "site_title" configuration.

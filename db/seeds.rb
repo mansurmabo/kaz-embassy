@@ -1,6 +1,6 @@
 users = User.create!([
-                 {email: 'admin@example.com', password: 'password', password_confirmation: 'password'},
-                 {email: 'manager@example.com', password: 'password', password_confirmation: 'password'}
+                 {email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: 'admin'},
+                 {email: 'manager@example.com', password: 'password', password_confirmation: 'password', role: 'moder'}
              ])
 
 categories = Category.create!([
@@ -8,7 +8,6 @@ categories = Category.create!([
                                {id: 2, name: 'Посольство'},
                                {id: 3, name: 'Консульский отдел'},
                                {id: 4, name: 'Казахстанско-кыргызское сотрудрничетсво'},
-                               {id: 5, name: 'Новости и публикации'}
                              ])
 subCategories = Page.create!([
                                  {title: 'Информация о Казахстане', category_id: 1},

@@ -55,6 +55,7 @@ end
 
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'cancancan'
 gem 'ckeditor'
 gem 'paperclip', '~> 4.3'
 gem 'faker'
