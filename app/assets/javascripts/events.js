@@ -2,9 +2,7 @@ $(document).ready(function() {
     $('#calendar').fullCalendar({
         eventSources: [
             {
-                url: '/events.json',
-                allday: true
-
+                url: '/events.json'
             }
         ],
         header: {
