@@ -4,8 +4,12 @@
 body {
   background-color: #a3b7c6;
 }
-.table td, .table th {
+.table {
+  border-right: none;
   border-left: none;
+}
+.table td, .table th, .table tr {
+  border: none;
 }
 .container {
   margin-bottom: 50px;
@@ -21,7 +25,9 @@ body {
 
 .nav-pills > li > a {
   text-decoration: none;
+  text-align: center;
   color: #337ab7;
+  min-width: 90px;
 
 }
 .dropdown-menu > li > a {
