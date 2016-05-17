@@ -54,6 +54,7 @@ group :development do
 end
 
 gem 'devise'
+gem 'bcrypt', :require => 'bcrypt'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'cancancan'
 gem 'ckeditor'
@@ -67,3 +68,5 @@ gem 'momentjs-rails'
 gem 'searchkick'
 gem 'puma'
 gem 'figaro'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'globalize', '~> 4.0.2'

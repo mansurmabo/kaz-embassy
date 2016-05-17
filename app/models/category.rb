@@ -2,4 +2,6 @@ class Category < ActiveRecord::Base
   has_many :pages, :dependent => :restrict_with_error
   validates :name, :presence => true
 
+  translates :name
+
 end

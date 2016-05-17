@@ -6,4 +6,16 @@ class ApplicationController < ActionController::Base
   def access_denied(exception)
     redirect_to admin_root_path, :alert => exception.message
   end
+
+  around_action :with_locale
+
+  private
+
+  def with_locale
+    I18n.with_locale(params[:locale]) { yield }
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }
+  end
 end

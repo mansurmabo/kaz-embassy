@@ -21,18 +21,18 @@
         </div>
       </div>
       <div class="col-md-10">
+        <div>
+          <%= link_to_unless_current "Рус", locale: "ru" %>
+          <%= link_to_unless_current "Eng", locale: "en" %>
+          <%= link_to_unless_current "Каз", locale: "kk" %>
+        </div>
         <a href="/">
           <div class="top__text-position">
             <div class="top-text">
-              <div class="kz-text">
-                <span>Қазақстан Республикасының Қырғыз Республикасындағы Елшілігінің сайты</span>
-              </div>
               <div class="ru-text">
-                <span>Caйт Посольства Республики Казахстан в Кыргызской Республике</span>
+                <span><%= t "kaz-emb_head" %></span>
               </div>
-              <div class="en-text">
-                <span>Official web site of Embassy of the Republic of Kazakhstan in the Kyrgyz Republic</span>
-              </div>
+
             </div>
           </div>
         </a>
@@ -50,11 +50,11 @@
     </div>
     <div class="col-xs-14 col-md-9">
       <ul class="nav nav-pills">
-        <li class='<%= "active" if current_page?(articles_path) %>'><a href="/articles">Новости</a></li>
-        <li class='<%= "active" if current_page?(events_path) %>'><a href="/events">Календарь</a></li>
+        <li class='<%= "active" if current_page?(articles_path) %>'><%=link_to t('news'), articles_path %></li>
+        <li class='<%= "active" if current_page?(events_path) %>'><%=link_to t('calendar'), events_path %></li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            Галерея <span class="caret"></span>
+            <%= t "gallery" %> <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <% ImagesCategory.all.each do |cat| %>
