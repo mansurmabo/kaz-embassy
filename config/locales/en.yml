@@ -1,5 +1,9 @@
 en:
   hello: "Hello world"
+  top-text: "Official web site of Embassy of the Republic of Kazakhstan in the Kyrgyz Republic"
+  news: "News"
+  events: "Events"
+  gallery: "Gallery"
   views:
     pagination:
       first: "&laquo;"

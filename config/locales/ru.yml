@@ -1,5 +1,9 @@
 ru:
   hello: "Привет мир"
+  top-text: "Caйт Посольства Республики Казахстан в Кыргызской Республике"
+  news: "Новости"
+  events: "События"
+  gallery: "Галерея"
   views:
     pagination:
       first: "&laquo;"
