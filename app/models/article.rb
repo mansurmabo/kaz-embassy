@@ -9,4 +9,4 @@ class Article < ActiveRecord::Base
   validates :content, :presence => true
 end
 
-Article.reindex
+#Article.reindex
