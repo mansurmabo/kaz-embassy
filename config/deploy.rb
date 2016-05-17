@@ -1,4 +1,4 @@
-server '176.126.167.232', roles: [:web, :app, :db], primary: true
+server '176.126.167.232', port: 80, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:mansurmabo/kaz-embassy.git'
 set :application,     'kaz-embassy'
