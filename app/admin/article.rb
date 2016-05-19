@@ -21,7 +21,24 @@ ActiveAdmin.register Article do
       row :image do |img|
         image_tag(img.image.url(:medium))
       end
+      row :type_id do |article|
+        Type.find(article.type_id).name if article.type_id.present?
+      end
+      row :title
       row :content
+
+    end
+    panel "Русский" do
+      attributes_table do
+        row :title
+        row :content
+      end
+    end
+    panel "English" do
+      attributes_table do
+        row :en_title
+        row :en_content
+      end
     end
   end
   form do |f|
@@ -41,7 +58,6 @@ ActiveAdmin.register Article do
           f.input :en_content, :input_html => {:class => "ckeditor"}
         end
       end
-
     end
     f.actions
   end

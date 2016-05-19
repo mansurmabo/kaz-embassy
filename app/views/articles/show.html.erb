@@ -8,8 +8,8 @@
 </div>
 <div>
   <% if I18n.locale == :en && @article.en_content.present? %>
-      <%= raw @article.en_content %>
+    <%= raw @article.en_content %>
   <% else %>
-      <%= raw @article.content %>
+    <%= raw @article.content %>
   <% end %>
 </div>

@@ -30,8 +30,8 @@
         <a href="/">
           <div class="top__text-position">
             <div class="top-text">
-                <!--<span>Қазақстан Республикасының Қырғыз Республикасындағы Елшілігінің сайты</span>-->
-                <span><%= t 'top-text' %> </span>
+              <!--<span>Қазақстан Республикасының Қырғыз Республикасындағы Елшілігінің сайты</span>-->
+              <span><%= t 'top-text' %> </span>
             </div>
           </div>
         </a>
@@ -57,20 +57,26 @@
           </a>
           <ul class="dropdown-menu">
             <% ImagesCategory.all.each do |cat| %>
-              <li><%= link_to cat.title, get_categories_path(cat) %></li>
+                <li>
+                  <% if I18n.locale == :en && cat.en_title.present? %>
+                    <%= link_to cat.en_title, get_categories_path(cat) %>
+                  <% else %>
+                    <%= link_to cat.title, get_categories_path(cat) %>
+                  <% end %>
+                </li>
             <% end %>
           </ul>
         </li>
         <li class="pull-right">
           <%= form_tag("/#{I18n.locale}/ search", method: "get", class: "form-horizontal") do %>
-            <div class="form-group">
-              <div class="col-md-8">
-                <%= text_field_tag :q, params[:q], class: 'form-control' %>
+              <div class="form-group">
+                <div class="col-md-8">
+                  <%= text_field_tag :q, params[:q], class: 'form-control' %>
+                </div>
+                <div class="col-md-3">
+                  <%= submit_tag t("search"), name: nil, class: 'btn btn-primary' %>
+                </div>
               </div>
-              <div class="col-md-3">
-                <%= submit_tag t("search"), name: nil, class: 'btn btn-primary' %>
-              </div>
-            </div>
           <% end %>
         </li>
       </ul>
