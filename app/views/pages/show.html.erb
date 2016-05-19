@@ -1,11 +1,15 @@
 <% if I18n.locale == :en && @page.en_title.present? %>
     <h3><%= @page.en_title %></h3>
+<% elsif I18n.locale == :kz && @page.kz_title.present? %>
+    <h3><%= @page.kz_title %></h3>
 <% else %>
     <h3><%= @page.title %></h3>
 <% end %>
 <div>
   <% if I18n.locale == :en && @page.en_content.present? %>
       <%= raw @page.en_content %>
+  <% elsif I18n.locale == :kz && @page.en_content.present? %>
+      <%= raw @page.kz_content %>
   <% else %>
       <%= raw @page.content %>
   <% end %>

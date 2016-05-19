@@ -4,6 +4,8 @@
         <div class="link"><i class="fa fa-database"></i>
           <% if I18n.locale == :en && category.en_name.present? %>
               <%= category.en_name %>
+          <% elsif I18n.locale == :kz && category.kz_name.present? %>
+              <%= category.kz_name %>
           <% else %>
               <%= category.name %>
           <% end %>
@@ -14,6 +16,8 @@
               <li>
                 <% if I18n.locale == :en && page.en_title.present? %>
                     <%= link_to page.en_title, page_path(page) %>
+                <% elsif I18n.locale == :kz && page.kz_title.present? %>
+                    <%= link_to page.kz_title, page_path(page) %>
                 <% else %>
                     <%= link_to page.title, page_path(page) %>
                 <% end %>

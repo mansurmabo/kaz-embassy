@@ -1,5 +1,7 @@
 <% if I18n.locale == :en && @article.en_title.present? %>
     <h3><%= @article.en_title %></h3>
+<% elsif I18n.locale == :kz && @article.kz_title.present? %>
+    <h3><%= @article.kz_title %></h3>
 <% else %>
     <h3><%= @article.title %></h3>
 <% end %>
@@ -8,8 +10,10 @@
 </div>
 <div>
   <% if I18n.locale == :en && @article.en_content.present? %>
-    <%= raw @article.en_content %>
+      <%= raw @article.en_content %>
+  <% elsif I18n.locale == :kz && @article.kz_content.present? %>
+      <%= raw @article.kz_content %>
   <% else %>
-    <%= raw @article.content %>
+      <%= raw @article.content %>
   <% end %>
 </div>

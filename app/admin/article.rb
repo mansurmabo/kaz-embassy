@@ -2,7 +2,7 @@ ActiveAdmin.register Article do
   menu false
   config.per_page = 20
 
-  permit_params :title, :content, :en_title, :en_content, :image, :created_at, :type_id
+  permit_params :title, :content, :en_title, :en_content, :kz_title, :kz_content, :image, :created_at, :type_id
   index do
     selectable_column
     id_column
@@ -10,6 +10,8 @@ ActiveAdmin.register Article do
       image_tag(img.image.url(:thumb))
     end
     column :title
+    column :kz_title
+    column :en_title
     column :type_id do |article|
       Type.find(article.type_id).name if article.type_id.present?
     end
@@ -34,6 +36,12 @@ ActiveAdmin.register Article do
         row :content
       end
     end
+    panel "Казакша" do
+      attributes_table do
+        row :kz_title
+        row :kz_content
+      end
+    end
     panel "English" do
       attributes_table do
         row :en_title
@@ -52,12 +60,19 @@ ActiveAdmin.register Article do
           f.input :created_at, :as => :datepicker
         end
       end
+      tab 'Казакша' do
+        f.inputs do
+          f.input :kz_title
+          f.input :kz_content, :input_html => {:class => "ckeditor"}
+        end
+      end
       tab 'English' do
         f.inputs do
           f.input :en_title
           f.input :en_content, :input_html => {:class => "ckeditor"}
         end
-      end
+        end
+
     end
     f.actions
   end

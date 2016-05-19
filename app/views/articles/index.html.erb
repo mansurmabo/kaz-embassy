@@ -3,6 +3,8 @@
       <li role="presentation">
         <% if I18n.locale == :en && type.en_name.present? %>
             <%= link_to type.en_name, get_news_path(type), remote: true %>
+        <% elsif I18n.locale == :kz && type.kz_name.present? %>
+            <%= link_to type.kz_name, get_news_path(type), remote: true %>
         <% else %>
             <%= link_to type.name, get_news_path(type), remote: true %>
         <% end %>
