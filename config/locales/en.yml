@@ -4,6 +4,9 @@ en:
   news: "News"
   events: "Events"
   gallery: "Gallery"
+  search: "Search"
+  search_results: "Search results:"
+  search_results_text: "No search results, please try again."
   views:
     pagination:
       first: "&laquo;"

@@ -1,4 +1,4 @@
-<h3>Результат поиска:</h3>
+<h3><%= t "search_results" %></h3>
 <hr>
 <table class="table table-hover">
   <% if @results.present? %>
@@ -6,13 +6,12 @@
       <tr>
         <td class="search-image"> <%= image_tag article.image.url(:thumb) if article.image_file_name.present? %></td>
         <td><%= link_to article.title, article_path(article) %></td>
-        <%# link_to article.title, controller: "articles", action: "show", id: article %>
       </tr>
     <% end %>
   <% else %>
-    <h4>Поиск не дал результатов! попробуйте снова..</h4>
+    <h4><%= t "search_results_text" %></h4>
   <% end %>
 </table>
 <div class="paginate">
-  <%= paginate @results %>
+  <%= paginate @results if @results.present? %>
 </div>

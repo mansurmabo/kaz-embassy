@@ -1,12 +1,25 @@
 <ul id="accordion" class="accordion">
   <% Category.all.each do |category| %>
-  <li>
-    <div class="link"><i class="fa fa-database"></i><%= category.name %><i class="fa fa-chevron-down"></i></div>
+      <li>
+        <div class="link"><i class="fa fa-database"></i>
+          <% if I18n.locale == :en && category.en_name.present? %>
+              <%= category.en_name %>
+          <% else %>
+              <%= category.name %>
+          <% end %>
+          <i class="fa fa-chevron-down"></i>
+        </div>
         <ul class="submenu">
           <% Page.where(category_id: category.id).each do |page| %>
-            <li><%= link_to page.title, page_path(page) %></li>
+              <li>
+                <% if I18n.locale == :en && page.en_title.present? %>
+                    <%= link_to page.en_title, page_path(page) %>
+                <% else %>
+                    <%= link_to page.title, page_path(page) %>
+                <% end %>
+              </li>
           <% end %>
         </ul>
-  </li>
+      </li>
   <% end %>
 </ul>

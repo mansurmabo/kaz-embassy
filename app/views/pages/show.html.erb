@@ -1,4 +1,12 @@
-<h3><%= @page.title %></h3>
+<% if I18n.locale == :en && @page.en_title.present? %>
+    <h3><%= @page.en_title %></h3>
+<% else %>
+    <h3><%= @page.title %></h3>
+<% end %>
 <div>
-  <%= raw @page.content %>
+  <% if I18n.locale == :en && @page.en_content.present? %>
+      <%= raw @page.en_content %>
+  <% else %>
+      <%= raw @page.content %>
+  <% end %>
 </div>

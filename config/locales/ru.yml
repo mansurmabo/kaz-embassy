@@ -4,6 +4,9 @@ ru:
   news: "Новости"
   events: "События"
   gallery: "Галерея"
+  search: "Поиск"
+  search_results: "Результат поиска:"
+  search_results_text: "Поиск не дал результатов, попробуйте изменить запрос."
   views:
     pagination:
       first: "&laquo;"

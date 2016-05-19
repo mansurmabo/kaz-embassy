@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423124640) do
+ActiveRecord::Schema.define(version: 20160519065342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20160423124640) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "en_name"
+    t.string   "kz_name"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -109,6 +111,10 @@ ActiveRecord::Schema.define(version: 20160423124640) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "en_title"
+    t.text     "en_content"
+    t.string   "kz_title"
+    t.text     "kz_content"
   end
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id", using: :btree

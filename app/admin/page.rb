@@ -1,7 +1,7 @@
 ActiveAdmin.register Page do
   menu false
   config.per_page = 20
-  permit_params :title, :content, :category_id
+  permit_params :title, :en_title, :content, :en_content, :category_id
   index do
     selectable_column
     id_column
@@ -12,15 +12,30 @@ ActiveAdmin.register Page do
     actions
   end
   show do
-    attributes_table do
+    attributes_table 'Русский' do
+      row :title
       row :content
+    end
+    attributes_table 'English' do
+      row :en_title
+      row :en_content
     end
   end
   form do |f|
-    f.inputs do
-      f.input :title
-      f.input :category_id, :as => :select, :collection => Category.all
-      f.input :content, :as => :ckeditor
+    tabs do
+      tab 'Русский' do
+        f.inputs do
+          f.input :title
+          f.input :category_id, :as => :select, :collection => Category.all
+          f.input :content, :as => :ckeditor
+        end
+      end
+      tab 'English' do
+        f.inputs do
+          f.input :en_title
+          f.input :en_content, :as => :ckeditor
+        end
+      end
     end
     f.actions
   end
