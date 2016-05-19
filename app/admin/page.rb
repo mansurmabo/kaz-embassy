@@ -12,13 +12,11 @@ ActiveAdmin.register Page do
     actions
   end
   show do
-    attributes_table 'Русский' do
-      row :title
-      row :content
-    end
-    attributes_table 'English' do
-      row :en_title
-      row :en_content
+    panel "Русский" do
+      attributes_table_for page, :title, :content
+      end
+    panel "English" do
+      attributes_table_for page, :en_title, :en_content
     end
   end
   form do |f|

@@ -1,6 +1,12 @@
 <ul class="nav nav-tabs">
   <% @types.each do |type| %>
-    <li role="presentation" ><%= link_to type.name, get_news_path(type), remote: true %></li>
+      <li role="presentation">
+        <% if I18n.locale == :en && type.en_name.present? %>
+            <%= link_to type.en_name, get_news_path(type), remote: true %>
+        <% else %>
+            <%= link_to type.name, get_news_path(type), remote: true %>
+        <% end %>
+      </li>
   <% end %>
 </ul>
 

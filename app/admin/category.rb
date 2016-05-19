@@ -22,15 +22,15 @@ ActiveAdmin.register Category do
         end
       end
       tab 'English' do
-        f.inputs  do
+        f.inputs do
           f.input :en_name
         end
       end
     end
-      f.actions
-    end
-
-    filter :name
-    filter :created_at
-
+    f.actions
   end
+
+  filter :name
+  filter :created_at
+
+end

@@ -1,7 +1,15 @@
-<h3><%= @article.title %></h3>
+<% if I18n.locale == :en && @article.en_title.present? %>
+    <h3><%= @article.en_title %></h3>
+<% else %>
+    <h3><%= @article.title %></h3>
+<% end %>
 <div class="article-image">
   <%= image_tag @article.image.url(:medium) unless @article.image_file_name.nil? %>
 </div>
 <div>
-  <%= raw @article.content %>
+  <% if I18n.locale == :en && @article.en_content.present? %>
+      <%= raw @article.en_content %>
+  <% else %>
+      <%= raw @article.content %>
+  <% end %>
 </div>

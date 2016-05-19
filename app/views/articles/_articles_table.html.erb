@@ -2,13 +2,26 @@
   <% @articles.each do |article| %>
       <tr>
         <td>
-          <%= image_tag article.image.url(:thumb) if article.image_file_name.present?%></td>
-        <td><%=link_to article.title, article_path(article) %></td>
-        <td><%= article.type.name if article.type.present? %></td>
+        <%= image_tag article.image.url(:thumb) if article.image_file_name.present? %></td>
+        <% if I18n.locale == :en && article.en_title.present? %>
+            <td><%= link_to article.en_title, article_path(article) %></td>
+            <td>
+              <% if article.type.present? %>
+                  <% if article.type.en_name.present? %>
+                      <%= article.type.en_name %>
+                  <% else %>
+                      <%= article.type.name %>
+                  <% end %>
+              <% end %>
+            </td>
+        <% else %>
+            <td><%= link_to article.title, article_path(article) %></td>
+            <td><%= article.type.name if article.type.present? %></td>
+        <% end %>
         <td><%= article.created_at.strftime('%d.%m.%Y') %></td>
       </tr>
   <% end %>
 </table>
-  <div class="paginate">
-    <%= paginate @articles %>
-  </div>
+<div class="paginate">
+  <%= paginate @articles %>
+</div>

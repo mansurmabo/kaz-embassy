@@ -2,7 +2,7 @@ ActiveAdmin.register Article do
   menu false
   config.per_page = 20
 
-  permit_params :title, :content, :image, :created_at, :type_id
+  permit_params :title, :content, :en_title, :en_content, :image, :created_at, :type_id
   index do
     selectable_column
     id_column
@@ -25,13 +25,23 @@ ActiveAdmin.register Article do
     end
   end
   form do |f|
-    f.inputs do
-      f.input :title
-      f.input :type_id, :as => :select, :collection => Type.all, :prompt => 'Выберите категорию новостей'
+    tabs do
+      tab 'Русский' do
+        f.inputs do
+          f.input :title
+          f.input :type_id, :as => :select, :collection => Type.all, :prompt => 'Выберите категорию новостей'
+          f.input :content, :input_html => {:class => "ckeditor"}
+          f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))
+          f.input :created_at, :as => :datepicker
+        end
+      end
+      tab 'English' do
+        f.inputs do
+          f.input :en_title
+          f.input :en_content, :input_html => {:class => "ckeditor"}
+        end
+      end
 
-      f.input :content, :input_html => { :class => "ckeditor" }
-      f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))
-      f.input :created_at, :as => :datepicker
     end
     f.actions
   end
