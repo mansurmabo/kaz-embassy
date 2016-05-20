@@ -1,0 +1,16 @@
+<% if I18n.locale == :en && @manifesto.en_title.present? %>
+    <h3><%= @manifesto.en_title %></h3>
+<% elsif I18n.locale == :kz && @manifesto.kz_title.present? %>
+    <h3><%= @manifesto.kz_title %></h3>
+<% else %>
+    <h3><%= @manifesto.title %></h3>
+<% end %>
+<div>
+  <% if I18n.locale == :en && @manifesto.en_content.present? %>
+      <%= raw @manifesto.en_content %>
+  <% elsif I18n.locale == :kz && @manifesto.kz_content.present? %>
+      <%= raw @manifesto.kz_content %>
+  <% else %>
+      <%= raw @manifesto.content %>
+  <% end %>
+</div>

@@ -7,12 +7,12 @@ Rails.application.routes.draw do
     get 'galleries/get_category/:id' => 'galleries#get_category', as: :get_categories
     get 'search', to: 'search#search'
     resources :articles
+    resources :manifestos
     resources :pages, only: [:index, :show]
     resources :categories, only: [:index]
     resources :events, only: [:index]
     resources :galleries, only: [:index, :show]
     root to: "articles#index"
-
 
   end
   get '/' => 'articles#index'

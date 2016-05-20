@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <% @manifestos.each do |manifesto| %>
+      <tr>
+        <% if I18n.locale == :en && manifesto.en_title.present? %>
+            <td><%= link_to manifesto.en_title, manifesto_path(manifesto) %></td>
+        <% elsif I18n.locale == :kz && manifesto.kz_title.present? %>
+            <td><%= link_to manifesto.kz_title, manifesto_path(manifesto) %></td>
+        <% else %>
+            <td><%= link_to manifesto.title, manifesto_path(manifesto) %></td>
+        <% end %>
+        <td><%= manifesto.created_at.strftime('%d.%m.%Y') %></td>
+      </tr>
+  <% end %>
+</table>
+<div class="paginate">
+  <%= paginate @manifestos %>
+</div>

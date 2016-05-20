@@ -50,6 +50,7 @@
     <div class="col-xs-14 col-md-9">
       <ul class="nav nav-pills">
         <li class='<%= "active" if current_page?(articles_path) %>'><%= link_to t("news"), articles_path %></li>
+        <li class='<%= "active" if current_page?(manifestos_path) %>'><%= link_to t("manifestos"), manifestos_path %></li>
         <li class='<%= "active" if current_page?(events_path) %>'><%= link_to t("events"), events_path %></li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
