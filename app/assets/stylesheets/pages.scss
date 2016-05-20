@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
+  h3 {
+    text-align: center;
+  }
   background-color: #a3b7c6;
 }
 .table {
@@ -97,14 +100,14 @@ ul, ol {
   filter: sepia(0);
 }
 .top__text-position {
-  margin: 15px 25px 10px 100px;
+  margin: 0px 25px 10px 100px;
   padding: 10px;
 }
 .top-text {
   text-decoration: none;
   text-align: center;
   vertical-align: center;
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 600;
   color: #286191;
 }
