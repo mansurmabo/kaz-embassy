@@ -1,12 +1,12 @@
 kz:
-  hello: "Привет мир"
+  hello: "Сәлем әлем"
   top-text: "Қазақстан Республикасының Қырғыз Республикасындағы Елшілігінің сайты"
-  news: "Новости"
-  events: "События"
+  news: "Жаңалықтары"
+  events: "Оқиғалар"
   gallery: "Галерея"
-  search: "Поиск"
-  search_results: "Результат поиска:"
-  search_results_text: "Поиск не дал результатов, попробуйте изменить запрос."
+  search: "Iздеу"
+  search_results: "Iздеу нәтижесі:"
+  search_results_text: "Iздеу нәтиже бермеді, өзгертіп көріңіз сұрау."
   views:
     pagination:
       first: "&laquo;"
