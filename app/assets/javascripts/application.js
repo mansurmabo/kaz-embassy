@@ -5,7 +5,7 @@
 //= require owl.carousel
 //= require moment
 //= require fullcalendar
-//= require fullcalendar/lang/ru.js
+//= require fullcalendar/lang-all.js
 //= require active_admin.js
 //= require events
 //= require gallery
