@@ -78,9 +78,11 @@ ul, ol {
   .row {
     background-color: transparent;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
-.top-back {
-}
+
 .social {
   //display: inline-block;
   margin: 10px;
