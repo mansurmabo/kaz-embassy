@@ -5,17 +5,17 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add :label => "News", priority: 1 do |news|
-        news.add :label => "Articles", :url => "/admin/articles"
-        news.add :label => "Types", :url => "/admin/types"
+      menu.add :label => "Новости", priority: 1 do |news|
+        news.add :label => "Статьи", :url => "/admin/articles"
+        news.add :label => "Категория новостей", :url => "/admin/types"
       end
-      menu.add :label => "Content", priority: 2 do |pages|
-        pages.add :label => "Pages", :url => "/admin/pages"
-        pages.add :label => "Categories", :url => "/admin/categories"
+      menu.add :label => "Контент", priority: 2 do |pages|
+        pages.add :label => "Страницы", :url => "/admin/pages"
+        pages.add :label => "Категория страниц", :url => "/admin/categories"
       end
-      menu.add :label => "Gallery", priority: 3 do |cat|
-        cat.add :label => "Images", :url => "/admin/galleries"
-        cat.add :label => "Categories", :url => "/admin/images_categories"
+      menu.add :label => "Галерея", priority: 3 do |cat|
+        cat.add :label => "Изображения", :url => "/admin/galleries"
+        cat.add :label => "Категория изображений", :url => "/admin/images_categories"
       end
     end
   end

@@ -16,3 +16,72 @@ ru:
       last: "&raquo;"
       truncate: "&hellip;"
 
+  activerecord:
+    models:
+      article: "Статья"
+      type: "Категория новостей"
+      page: "Страница"
+      category: "Категория страниц"
+      gallery: "Изображение"
+      images_category: "Категория изображений"
+      event: "Событие"
+      third_party: "Сторонний ресурс"
+      manifesto: "Манифест"
+      user: "Пользователь"
+    attributes:
+      article:
+        image: "Изображение"
+        title: "Заголовок"
+        kz_title: 'Заголовок на казахском'
+        en_title: "Заголовок на английском"
+        content: "Контент"
+        kz_content: "Контент на казахском"
+        en_content: "Контент на английском"
+        type_id: "Категория новостей"
+        created_at: "Дата создания"
+      type:
+        name: "Название"
+        kz_name: "Название на казахском"
+        en_name: "Название на английском"
+      page:
+        title: "Заголовок"
+        kz_title: 'Заголовок на казахском'
+        en_title: "Заголовок на английском"
+        content: "Контент"
+        kz_content: "Контент на казахском"
+        en_content: "Контент на английском"
+        category: "Категория"
+      category:
+        name: "Название"
+        kz_name: "Название на казахском"
+        en_name: "Название на английском"
+      gallery:
+        image: "Изображение"
+        title: "Заголовок"
+        images_category_id: "Категория"
+      images_category:
+        title: "Название"
+        kz_title: "Название на казахском"
+        en_title: "Название на английском"
+      event:
+        image: "Изображение"
+        site: "Сайт"
+        date_st: "Дата начала"
+        date_end: "Дата завершения"
+        repeat: "Ежегодное"
+      third_party:
+        link: "Ссылка"
+        image: "Изображение"
+      manifesto:
+        title: "Заголовок"
+        kz_title: 'Заголовок на казахском'
+        en_title: "Заголовок на английском"
+        content: "Контент"
+        kz_content: "Контент на казахском"
+        en_content: "Контент на английском"
+      user:
+        email: "Емайл"
+        role: "Роль"
+        current_sign_in_at: "Начало текущая сессия"
+        sign_in_count: "Количество сессий"
+        created_at: "Дата создания"
