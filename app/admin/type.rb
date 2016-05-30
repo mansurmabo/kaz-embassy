@@ -23,7 +23,7 @@ ActiveAdmin.register Type do
           f.input :name
         end
         end
-      tab 'Каз' do
+      tab 'Қазақша' do
         f.inputs do
           f.input :kz_name
         end

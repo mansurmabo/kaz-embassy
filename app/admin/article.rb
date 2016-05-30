@@ -36,7 +36,7 @@ ActiveAdmin.register Article do
         row :content
       end
     end
-    panel "Казакша" do
+    panel "Қазақша" do
       attributes_table do
         row :kz_title
         row :kz_content
@@ -60,7 +60,7 @@ ActiveAdmin.register Article do
           f.input :created_at, :as => :datepicker
         end
       end
-      tab 'Казакша' do
+      tab 'Қазақша' do
         f.inputs do
           f.input :kz_title
           f.input :kz_content, :input_html => {:class => "ckeditor"}

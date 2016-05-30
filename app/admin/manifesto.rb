@@ -15,7 +15,7 @@ ActiveAdmin.register Manifesto do
     panel "Русский" do
       attributes_table_for manifesto, :title, :content
     end
-    panel "Казакша" do
+    panel "Қазақша" do
       attributes_table_for manifesto, :kz_title, :kz_content
     end
     panel "English" do
@@ -30,7 +30,7 @@ ActiveAdmin.register Manifesto do
           f.input :content, :as => :ckeditor
         end
       end
-      tab 'Каз' do
+      tab 'Қазақша' do
         f.inputs do
           f.input :kz_title
           f.input :kz_content, :as => :ckeditor

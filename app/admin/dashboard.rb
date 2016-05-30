@@ -5,31 +5,33 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
-        span ("Articles - создание новостей")
+        span ("Cоздание новостей")
+        small ("Статьи с изображениями будут автоматически попадать в слайдшоу")
       end
       span class: "blank_slate" do
-        span ("Types - создание категории для новостей")
+        span ("Категории для новостей")
+        small("Вы не сможете удалить категорию если в ней есть хотя бы одна статья")
       end
       span class: "blank_slate" do
-        span ("Pages - создание страниц контента, можно добавлять картинки ссылки и тд")
-        small("Авотматически добавляется в субменю")
+        span ("Cоздание страниц контента, можно добавлять картинки ссылки и тд")
+        small("Автоматически добавляется в подменю")
       end
       span class: "blank_slate" do
-        span ("categries - создание категории для страниц")
-        small("Авотматически добавляется в меню")
+        span ("Создание категории для страниц")
+        small("Автоматически добавляется в меню")
       end
       span class: "blank_slate" do
-        span ("Galleries - Добавление картинок в галерею")
+        span ("Галерея")
+        small ("Изображения без категорий не будут отображаться")
       end
       span class: "blank_slate" do
-        span ("Slideshows - Добавление картинки в слайдшоу на фронтальной странице")
-        small("Не рекомендуется добавлять более 8 штук, будут тормоза")
-      end
-      span class: "blank_slate" do
-        span ("Third Parties - Добавление картинки в виде ссылки на сторонний ресурс")
+        span ("Сторонние ресурсы - Добавление картинки в виде ссылки на сторонний ресурс")
         small("Автоматически будет попадать в контейнер под главным меню")
+        end
+      span class: "blank_slate" do
+        span ("События будут отображаться в календаре")
+        small("События с изображениями буду отображаться в контейнере слева, до тех пор, пока событие акутально")
       end
-
 
 
     end
