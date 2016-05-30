@@ -85,3 +85,5 @@ ru:
         current_sign_in_at: "Начало текущая сессия"
         sign_in_count: "Количество сессий"
         created_at: "Дата создания"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
