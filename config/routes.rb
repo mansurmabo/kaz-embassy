@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index]
     resources :events, only: [:index]
     resources :galleries, only: [:index, :show]
+    resources :co_events, only: [:index, :show]
     root to: "articles#index"
 
   end

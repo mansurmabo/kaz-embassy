@@ -1,0 +1,2 @@
+module CoEventsHelper
+end

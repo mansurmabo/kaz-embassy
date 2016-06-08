@@ -25,7 +25,6 @@ subCategories = Page.create!([
                                  {title: 'Информация о Почетных консулах РК', category_id: 3},
                                  {title: 'Почетное консульство РК в Таласской области', category_id: 3},
                                  {title: 'Общая информация', category_id: 4},
-                                 {title: 'События', category_id: 4}
                              ]
 
 )

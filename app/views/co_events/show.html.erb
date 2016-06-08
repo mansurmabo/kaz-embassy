@@ -1,0 +1,19 @@
+<% if I18n.locale == :en && @co_event.en_title.present? %>
+    <h3><%= @co_event.en_title %></h3>
+<% elsif I18n.locale == :kz && @co_event.kz_title.present? %>
+    <h3><%= @co_event.kz_title %></h3>
+<% else %>
+    <h3><%= @co_event.title %></h3>
+<% end %>
+<div class="article-image">
+  <%= image_tag @co_event.image.url(:medium) unless @co_event.image_file_name.nil? %>
+</div>
+<div>
+  <% if I18n.locale == :en && @co_event.en_content.present? %>
+      <%= raw @co_event.en_content %>
+  <% elsif I18n.locale == :kz && @co_event.kz_content.present? %>
+      <%= raw @co_event.kz_content %>
+  <% else %>
+      <%= raw @co_event.content %>
+  <% end %>
+</div>

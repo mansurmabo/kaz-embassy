@@ -1,0 +1,34 @@
+<table class="table table-hover">
+  <% @co_events.each do |co_event| %>
+      <tr>
+        <td>
+          <%= image_tag co_event.image.url(:thumb) if co_event.image_file_name.present? %></td>
+        <% if I18n.locale == :en %>
+            <td><%=
+              if co_event.en_title.present?
+                link_to co_event.en_title, co_event_path(co_event)
+              else
+                link_to co_event.title, co_event_path(co_event)
+              end
+            %>
+            </td>
+
+        <% elsif I18n.locale == :kz %>
+            <td><%=
+              if co_event.kz_title.present?
+                link_to co_event.kz_title, co_event_path(co_event)
+              else
+                link_to co_event.title, co_event_path(co_event)
+              end
+            %></td>
+
+        <% else %>
+            <td><%= link_to co_event.title, co_event_path(co_event) %></td>
+        <% end %>
+        <td><%= co_event.created_at.strftime('%d.%m.%Y') %></td>
+      </tr>
+  <% end %>
+</table>
+<div class="paginate">
+  <%= paginate @co_events %>
+</div>

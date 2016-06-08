@@ -1,4 +1,5 @@
 <ul id="accordion" class="accordion">
+
   <% Category.all.each do |category| %>
       <li>
         <div class="link"><i class="fa fa-database"></i>
@@ -12,6 +13,11 @@
           <i class="fa fa-chevron-down"></i>
         </div>
         <ul class="submenu">
+          <% if category.id == 4 %>
+            <li>
+              <%= link_to t("events"), co_events_path %>
+            </li>
+          <% end %>
           <% Page.where(category_id: category.id).each do |page| %>
               <li>
                 <% if I18n.locale == :en && page.en_title.present? %>
