@@ -6,6 +6,7 @@ en:
   events: "Events"
   gallery: "Gallery"
   search: "Search"
+  all: "All"
   search_results: "Search results:"
   search_results_text: "No search results, please try again."
   views:

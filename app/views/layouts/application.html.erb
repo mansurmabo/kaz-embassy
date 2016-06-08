@@ -57,6 +57,9 @@
             <%= t "gallery" %><span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
+            <li>
+              <%= link_to t("all"), galleries_path %>
+            </li>
             <% ImagesCategory.all.each do |cat| %>
                 <li>
                   <% if I18n.locale == :en && cat.en_title.present? %>

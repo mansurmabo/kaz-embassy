@@ -6,6 +6,7 @@ ru:
   events: "События"
   gallery: "Галерея"
   search: "Поиск"
+  all: "Все"
   search_results: "Результат поиска:"
   search_results_text: "Поиск не дал результатов, попробуйте изменить запрос."
   views:

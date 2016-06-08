@@ -6,6 +6,7 @@ kz:
   events: "Оқиғалар"
   gallery: "Галерея"
   search: "Iздеу"
+  all: "Бәрі"
   search_results: "Iздеу нәтижесі:"
   search_results_text: "Iздеу нәтиже бермеді, өзгертіп көріңіз сұрау."
   views:
