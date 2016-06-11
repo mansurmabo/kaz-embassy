@@ -17,8 +17,7 @@ $(document).ready(function () {
             dayNames: ['Дүйсенбі', 'Сейсенбі', 'Сәрсенбі', 'Бейсенбі', 'Жұма', 'Сенбі', 'Жексенбі'],
             dayNamesShort: ['Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сн', 'Жк'],
             defaultView: 'month',
-            editable: false,
-            timezone: "UTC"
+            editable: false
 
         });
     } else {
@@ -26,7 +25,6 @@ $(document).ready(function () {
             eventSources: [
                 {
                     url: "events.json"
-
                 }
             ],
             header: {
@@ -36,8 +34,7 @@ $(document).ready(function () {
             },
             lang: lang,
             defaultView: 'month',
-            editable: false,
-            timezone: "UTC"
+            editable: false
 
         });
     }
