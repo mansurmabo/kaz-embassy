@@ -7,6 +7,6 @@ class GalleriesController < ApplicationController
     @image = Gallery.find(params[:id])
   end
   def get_category
-    @images = Gallery.where(images_category_id: params[:id])
+    @images = Gallery.where(images_category_id: params[:id]).page(params[:page]).per(12)
   end
 end
