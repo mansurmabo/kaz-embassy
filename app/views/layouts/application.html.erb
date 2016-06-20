@@ -10,9 +10,33 @@
 <body>
 
 <div class="container">
-  <div class= "head_bar">
-    <%= link_to t('nine'), 'http://www.akorda.kz/ru/events/akorda_news/rasporyazhenie-prezidenta-respubliki-kazahstan-ob-obyavlenii-nacionalnogo-traura-v-respublike-kazahstan-v-svyazi-s-chelovecheskimi-zhertvami', target: '_blank' %>
-  </div>
+  <% headlines = Headline.where(show: true)
+     if headlines.any? && headlines.last.present?
+       line = Headline.last %>
+      <div class="head_bar" style="
+      height: <%= line.height %>px;
+          line-height: <%= line.height if line.title.length < 80 %>px;
+          background-color: <%= line.color %>;
+      ">
+        <% if line.url.present? %>
+            <% if I18n.locale == :kz && line.kz_title.present? %>
+                <%= link_to line.kz_title, line.url, target: '_blank', style: "color: #{line.font_color}; font-size: #{line.font_size}px" %>
+            <% elsif I18n.locale == :en && line.en_title.present? %>
+                <%= link_to line.en_title, line.url, target: '_blank', style: "color: #{line.font_color}; font-size: #{line.font_size}px" %>
+            <% else %>
+                <%= link_to line.title, line.url, target: '_blank', style: "color: #{line.font_color}; font-size: #{line.font_size}px" %>
+            <% end %>
+        <% else %>
+            <% if I18n.locale == :kz && line.kz_title.present? %>
+                <span style="color: <%=line.font_color %>; font-size: <%=line.font_size %>px"><%= line.kz_title %> </span>
+            <% elsif I18n.locale == :en && line.en_title.present? %>
+                <span style="color: <%=line.font_color %>; font-size: <%=line.font_size %>px"><%= line.en_title %> </span>
+            <% else %>
+                <span style="color: <%=line.font_color %>; font-size: <%=line.font_size %>px"><%= line.title %> </span>
+            <% end %>
+        <% end %>
+      </div>
+  <% end %>
   <div class="top">
     <div class="row">
       <div class="lang">
@@ -66,9 +90,9 @@
             <% ImagesCategory.all.each do |cat| %>
                 <li>
                   <% if I18n.locale == :en && cat.en_title.present? %>
-                    <%= link_to cat.en_title, get_categories_path(cat) %>
+                      <%= link_to cat.en_title, get_categories_path(cat) %>
                   <% else %>
-                    <%= link_to cat.title, get_categories_path(cat) %>
+                      <%= link_to cat.title, get_categories_path(cat) %>
                   <% end %>
                 </li>
             <% end %>
