@@ -1,4 +1,5 @@
 ActiveAdmin.register Manifesto do
+  menu priority: 4
 
   config.per_page = 20
 

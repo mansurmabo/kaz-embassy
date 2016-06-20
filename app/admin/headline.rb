@@ -1,4 +1,6 @@
 ActiveAdmin.register Headline do
+  menu priority: 6
+
   permit_params :title, :kz_title, :en_title, :color, :height, :font_size, :font_color, :url, :show
   config.filters = false
   index do
