@@ -32,6 +32,7 @@ ru:
       manifesto: "Манифест"
       user: "Пользователь"
       co_event: "События сотрудничества"
+      headline: "Верхняя лента"
     attributes:
       article:
         image: "Изображение"
@@ -91,3 +92,13 @@ ru:
         created_at: "Дата создания"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      headline:
+        title: "Текст"
+        kz_title: "Текст на казахском"
+        en_title: "Текст на английском"
+        url: "Адрес сайта"
+        color: "Фоновый цвет"
+        font_color: "Цвет текста"
+        font_size: "Размер шрифта"
+        height: "Высота ленты"
+        show: "Показать"

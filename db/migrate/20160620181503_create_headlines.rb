@@ -4,7 +4,7 @@ class CreateHeadlines < ActiveRecord::Migration
       t.string :title, null: false
       t.string :kz_title
       t.string :en_title
-      t.string :font_size
+      t.integer :font_size
       t.string :font_color
       t.string :color
       t.integer :height
