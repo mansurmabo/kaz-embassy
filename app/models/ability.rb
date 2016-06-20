@@ -17,6 +17,8 @@ class Ability
       can :manage, ImagesCategory
       can :manage, Event
       can :manage, Manifesto
+      can :manage, Headline
+      can :manage, CoEvent
       can :manage, User, :id => user.id
     else
       can :read, :all
