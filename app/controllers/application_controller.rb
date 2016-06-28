@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     redirect_to admin_root_path, :alert => exception.message
   end
 
+  def set_admin_locale
+    I18n.locale = :ru
+  end
+
   private
 
   def set_locale

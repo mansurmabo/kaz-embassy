@@ -23,6 +23,7 @@ ActiveAdmin.setup do |config|
 
   config.on_unauthorized_access = :access_denied
 
+  config.before_filter :set_admin_locale
   # This will ONLY change the title for the admin section. Other
   # namespaces will continue to use the main "site_title" configuration.
 
