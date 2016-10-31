@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index]
     resources :galleries, only: [:index, :show]
     resources :co_events, only: [:index, :show]
+    resources :citizens, only: [:new, :create]
     root to: "articles#index"
 
   end

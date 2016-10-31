@@ -11,6 +11,24 @@ ru:
   nine: "9 июня 2016 года День национального траура в Республике Казахстан"
   search_results: "Результат поиска:"
   search_results_text: "Поиск не дал результатов, попробуйте изменить запрос."
+  name: "Имя"
+  surname: "Фамилия"
+  father_name: "Отчество"
+  old_surname: "Прежняя Фамилия"
+  birthday: "Дата Рождения"
+  nationality: "Национальность"
+  marital_status: "Семейное Положение"
+  spouse_name: "ФИО Супруга"
+  photo: "Фото"
+  education: "Образование и Специальность"
+  departure_reason: "Когда и в связи с чем выехали за границу"
+  last_kaz_address: "Последний адрес в РК"
+  kaz_work_place: "Место работы или учебы в РК"
+  current_country: "Принятие гражд. стр. пребывания"
+  current_address: "Адрес в стране пребывания(Латинскими буквами) "
+  phone: "Номер Телефона"
+
+
   views:
     pagination:
       first: "&laquo;"

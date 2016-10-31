@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620181503) do
+ActiveRecord::Schema.define(version: 20161027151808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,44 @@ ActiveRecord::Schema.define(version: 20160620181503) do
     t.datetime "updated_at", null: false
     t.string   "en_name"
     t.string   "kz_name"
+  end
+
+  create_table "citizen_passports", force: :cascade do |t|
+    t.integer  "citizen_id"
+    t.string   "type"
+    t.string   "series"
+    t.string   "number"
+    t.date     "date_of_issue"
+    t.date     "date_of_validity"
+    t.string   "issued_by"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "citizen_relations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "citizens", force: :cascade do |t|
+    t.string   "surname"
+    t.string   "old_surname"
+    t.string   "name"
+    t.string   "father_name"
+    t.date     "birthday"
+    t.string   "nationality"
+    t.boolean  "marital_status"
+    t.string   "spouse_name"
+    t.string   "photo"
+    t.string   "education"
+    t.string   "departure_reason"
+    t.string   "last_kaz_address"
+    t.string   "kaz_work_place"
+    t.string   "current_country"
+    t.string   "current_address"
+    t.string   "phone"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -166,6 +204,14 @@ ActiveRecord::Schema.define(version: 20160620181503) do
   end
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id", using: :btree
+
+  create_table "passport_persons", force: :cascade do |t|
+    t.integer  "citizen_passport_id"
+    t.string   "fullname"
+    t.date     "birthday"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "third_parties", force: :cascade do |t|
     t.string   "link"

@@ -1,0 +1,31 @@
+<%= form_for @citizen, html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+      <label for='citizen_surname' class="col-sm-2 control-label"><%= t(:surname) %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :surname, class: 'form-control', placeholder: t(:surname) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for='citizen_old_surname' class="col-sm-2 control-label"><%= t(:old_surname) %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :old_surname, class: 'form-control', placeholder: t(:old_surname) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for='citizen_name' class="col-sm-2 control-label"><%= t(:name) %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: 'form-control', placeholder: t(:name) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for='citizen_father_name' class="col-sm-2 control-label"><%= t(:father_name) %></label>
+      <div class="col-sm-10">
+        <%= f.text_field :father_name, class: 'form-control', placeholder: t(:father_name) %>
+      </div>
+    </div>
+
+<% end %>
