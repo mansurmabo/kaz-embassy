@@ -27,7 +27,12 @@ ru:
   current_country: "Принятие гражд. стр. пребывания"
   current_address: "Адрес в стране пребывания(Латинскими буквами) "
   phone: "Номер Телефона"
-
+  passport_type: "Тип проездного документа"
+  passport_series: "Серия"
+  passport_number: "Номер"
+  passport_date_of_issue: "Дата выдачи"
+  passport_date_of_validity: "Срок действия"
+  passport_issued_by: "Кем выдан"
 
   views:
     pagination:

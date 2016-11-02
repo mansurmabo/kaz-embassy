@@ -27,7 +27,12 @@ en:
   current_country: "Current Country"
   current_address: "Current Address"
   phone: "Phone Number"
-
+  passport_type: "Type of Passport"
+  passport_series: "Series"
+  passport_number: "Number"
+  passport_date_of_issue: "Date of Issue"
+  passport_date_of_validity: "Date of Validity"
+  passport_issued_by: "Issued by"
 
   views:
     pagination:
