@@ -1,32 +1,33 @@
 <h3>Регистрационная карточка граждан Республики Казахстан, проживающих за границей</h3>
+<br>
 <% @citizen.build_citizen_passport if @citizen.citizen_passport.nil? %>
 <%= form_for @citizen, html: {class: "form-horizontal"} do |f| %>
     <div class="card_main">
       <h4>Основные данные (Ф.И.О. латинскими буквами)</h4>
+      <hr>
       <div class="form-group">
         <label for='citizen_surname' class="col-sm-3 control-label"><%= t(:surname) %></label>
         <div class="col-sm-9">
-          <%= f.text_field :surname, class: 'form-control', placeholder: t(:surname) %>
+          <%= f.text_field :surname, class: 'form-control', placeholder: 'Myrzabdulaev' %>
         </div>
       </div>
 
       <div class="form-group">
         <label for='citizen_old_surname' class="col-sm-3 control-label"><%= t(:old_surname) %></label>
         <div class="col-sm-9">
-          <%= f.text_field :old_surname, class: 'form-control', placeholder: t(:old_surname) %>
+          <%= f.text_field :old_surname, class: 'form-control', placeholder: 'Aliev' %>
         </div>
       </div>
-
       <div class="form-group">
         <label for='citizen_name' class="col-sm-3 control-label"><%= t(:name) %></label>
         <div class="col-sm-9">
-          <%= f.text_field :name, class: 'form-control', placeholder: t(:name) %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Serik' %>
         </div>
       </div>
       <div class="form-group">
         <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:father_name) %></label>
         <div class="col-sm-9">
-          <%= f.text_field :father_name, class: 'form-control', placeholder: t(:father_name) %>
+          <%= f.text_field :father_name, class: 'form-control', placeholder: 'Keneshevich' %>
         </div>
       </div>
       <div class="form-group">
@@ -50,24 +51,24 @@
       <div class="form-group">
         <label for='citizen_marital_status' class="col-sm-3 control-label"><%= t(:marital_status) %></label>
         <div class="col-sm-9">
-          <%= f.text_field :marital_status, class: 'form-control', placeholder: t(:marital_status) %>
+          <%= f.select :marital_status, [['Нет', false], ['Да', true]], {}, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <label for='citizen_spouse_name' class="col-sm-3 control-label"><%= t(:spouse_name) %></label>
         <div class="col-sm-9">
-          <%= f.text_field :spouse_name, class: 'form-control', placeholder: t(:spouse_name) %>
+          <%= f.text_field :spouse_name, class: 'form-control', placeholder: 'Sadykova' %>
         </div>
       </div>
     </div>
-
-    <div class="card_passport">
-      <h4>Паспортные данные</h4>
-      <%= f.fields_for :citizen_passport do |c| %>
+    <%= f.fields_for :citizen_passport do |c| %>
+        <div class="card_passport">
+          <h4>Паспортные данные</h4>
+          <hr>
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_type' class="col-sm-3 control-label"><%= t(:passport_type) %></label>
             <div class="col-sm-9">
-              <%= c.text_field :type, class: 'form-control', placeholder: t(:passport_type) %>
+              <%= c.select :type, ['Национальный Паспорт', 'Удостоверение Личности'], {}, class: 'form-control', placeholder: t(:passport_type) %>
             </div>
           </div>
           <div class="form-group">
@@ -85,13 +86,13 @@
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_date_of_issue' class="col-sm-3 control-label"><%= t(:passport_date_of_issue) %></label>
             <div class="col-sm-9">
-              <%= c.text_field :date_of_issue, class: 'form-control', placeholder: t(:passport_date_of_issue) %>
+              <%= c.text_field :date_of_issue, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:passport_date_of_issue) %>
             </div>
           </div>
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_date_of_validity' class="col-sm-3 control-label"><%= t(:passport_date_of_validity) %></label>
             <div class="col-sm-9">
-              <%= c.text_field :date_of_validity, class: 'form-control', placeholder: t(:passport_date_of_validity) %>
+              <%= c.text_field :date_of_validity, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:passport_date_of_validity) %>
             </div>
           </div>
           <div class="form-group">
@@ -100,65 +101,102 @@
               <%= c.text_field :issued_by, class: 'form-control', placeholder: t(:passport_issued_by) %>
             </div>
           </div>
+        </div>
 
-      <% end %>
-    </div>
-
-
-    <div class="card_members">
-      <h4>Лица, внесенные в паспорт</h4>
-    </div>
+        <div class="card_members">
+          <h4>Лица, внесенные в паспорт</h4>
+          <hr>
+          <%= c.fields_for :passport_person do |pp| %>
+              <div class="form-group">
+                <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+                <div class="col-sm-9">
+                  <%= pp.text_field :fullname, class: 'form-control', placeholder: t(:fullname) %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
+                <div class="col-sm-9">
+                  <%= pp.text_field :birthday, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
     <div class="card_description">
+      <h4>Общее описание</h4>
+      <hr>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:education) %></label>
+        <label for='citizen_education' class="col-sm-3 control-label"><%= t(:education) %></label>
         <div class="col-sm-9">
           <%= f.text_field :education, class: 'form-control', placeholder: t(:education) %>
         </div>
       </div>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:departure_reason) %></label>
+        <label for='citizen_departure_reason' class="col-sm-3 control-label"><%= t(:departure_reason) %></label>
         <div class="col-sm-9">
           <%= f.text_field :departure_reason, class: 'form-control', placeholder: t(:departure_reason) %>
         </div>
       </div>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:last_kaz_address) %></label>
+        <label for='citizen_last_kaz_address' class="col-sm-3 control-label"><%= t(:last_kaz_address) %></label>
         <div class="col-sm-9">
           <%= f.text_field :last_kaz_address, class: 'form-control', placeholder: t(:last_kaz_address) %>
         </div>
       </div>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:kaz_work_place) %></label>
+        <label for='citizen_kaz_work_place' class="col-sm-3 control-label"><%= t(:kaz_work_place) %></label>
         <div class="col-sm-9">
           <%= f.text_field :kaz_work_place, class: 'form-control', placeholder: t(:kaz_work_place) %>
         </div>
       </div>
-    </div>
-    <div class="card_relation_in_kz">
-      <h4>Родственники в Республике Казахстан (указать степень родства, Ф.И.О. и место житель.)</h4>
-    </div>
-
-    <div class="card_relation_out_kz">
-      <h4>Родственники за пределами Республике Казахстан, в том числе и в стране пребывания (родители, супруг/а,
-        дети)</h4>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:current_country) %></label>
+        <label for='citizen_current_country' class="col-sm-3 control-label"><%= t(:current_country) %></label>
         <div class="col-sm-9">
           <%= f.text_field :current_country, class: 'form-control', placeholder: t(:current_country) %>
         </div>
       </div>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:current_address) %></label>
+        <label for='citizen_current_address' class="col-sm-3 control-label"><%= t(:current_address) %></label>
         <div class="col-sm-9">
           <%= f.text_field :current_address, class: 'form-control', placeholder: t(:current_address) %>
         </div>
       </div>
       <div class="form-group">
-        <label for='citizen_father_name' class="col-sm-3 control-label"><%= t(:phone) %></label>
+        <label for='citizen_phone' class="col-sm-3 control-label"><%= t(:phone) %></label>
         <div class="col-sm-9">
           <%= f.text_field :phone, class: 'form-control', placeholder: t(:phone) %>
         </div>
       </div>
     </div>
+    <div class="card_relation_in_kz">
+      <h4>Родственники в Республике Казахстан (указать степень родства, Ф.И.О. и место жительcтва.)</h4>
+      <hr>
+      <%= f.fields_for :citizen_citizen_relation_fullname do |cr| %>
+          <div class="form-group">
+            <label for='relation_in_kz' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+            <div class="col-sm-9">
+              <%= cr.text_field :fullname, id: 'relation_in_kz', class: 'form-control', placeholder: t(:fullname) %>
+            </div>
+          </div>
+          <%= cr.hidden_field :in_kz, value: true %>
+      <% end %>
+    </div>
 
+    <div class="card_relation_out_kz">
+      <h4>Родственники за пределами Республике Казахстан, в том числе и в стране пребывания (родители, супруг/а, дети)</h4>
+      <hr>
+      <%= f.fields_for :citizen_relation do |cr| %>
+          <div class="form-group">
+            <label for='relation_out_kz' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+            <div class="col-sm-9">
+              <%= cr.text_field :fullname, id: 'relation_out_kz', class: 'form-control', placeholder: t(:fullname) %>
+            </div>
+          </div>
+          <%= cr.hidden_field :in_kz, value: false %>
+    <% end %>
+    </div>
+    <br><hr>
+    <div>
+      <%= f.submit t(:send), class: 'btn btn-primary'  %>
+    </div>
 <% end %>

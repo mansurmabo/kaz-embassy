@@ -18,7 +18,7 @@ ru:
   birthday: "Дата Рождения"
   nationality: "Национальность"
   marital_status: "Семейное Положение"
-  spouse_name: "ФИО Супруга"
+  spouse_name: "ФИО Супруга/и"
   photo: "Фото"
   education: "Образование и Специальность"
   departure_reason: "Когда и в связи с чем выехали за границу"
@@ -33,7 +33,8 @@ ru:
   passport_date_of_issue: "Дата выдачи"
   passport_date_of_validity: "Срок действия"
   passport_issued_by: "Кем выдан"
-
+  fullname: "ФИО"
+  send: "Отправить"
   views:
     pagination:
       first: "&laquo;"

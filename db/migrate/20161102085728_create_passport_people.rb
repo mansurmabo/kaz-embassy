@@ -1,6 +1,6 @@
-class PassportPerson < ActiveRecord::Migration
+class CreatePassportPeople < ActiveRecord::Migration
   def change
-    create_table :passport_persons do |t|
+    create_table :passport_people do |t|
       t.integer :citizen_passport_id
       t.string  :fullname
       t.date    :birthday

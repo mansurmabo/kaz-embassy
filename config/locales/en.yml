@@ -33,7 +33,8 @@ en:
   passport_date_of_issue: "Date of Issue"
   passport_date_of_validity: "Date of Validity"
   passport_issued_by: "Issued by"
-
+  fullname: "Fullname"
+  send: "Send"
   views:
     pagination:
       first: "&laquo;"

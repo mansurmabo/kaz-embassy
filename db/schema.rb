@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027151808) do
+ActiveRecord::Schema.define(version: 20161102085728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20161027151808) do
   end
 
   create_table "citizen_relations", force: :cascade do |t|
+    t.integer  "citizen_id"
+    t.string   "fullname"
+    t.boolean  "in_kz"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -205,7 +208,7 @@ ActiveRecord::Schema.define(version: 20161027151808) do
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id", using: :btree
 
-  create_table "passport_persons", force: :cascade do |t|
+  create_table "passport_people", force: :cascade do |t|
     t.integer  "citizen_passport_id"
     t.string   "fullname"
     t.date     "birthday"
