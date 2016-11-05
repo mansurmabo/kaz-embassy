@@ -1,0 +1,15 @@
+//= require jquery
+//= require bootstrap-sprockets
+//= require jquery_ujs
+// require ckeditor/init
+//= require owl.carousel
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang-all.js
+//= require active_admin.js
+//= require events
+//= require gallery
+//= require menu
+//= require slideshow
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
