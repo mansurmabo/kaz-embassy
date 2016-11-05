@@ -1,5 +1,6 @@
 <h3>Регистрационная карточка граждан Республики Казахстан, проживающих за границей</h3>
 <br>
+<%= render 'shared/error', object: @citizen %>
 <% @citizen.build_citizen_passport if @citizen.citizen_passport.nil? %>
 <%= form_for @citizen, html: {class: "form-horizontal"} do |f| %>
     <div class="card_main">

@@ -6,11 +6,17 @@ class CitizensController < ApplicationController
 
   def create
     @citizen = Citizen.create(citizen_params)
-    @passport = CitizenPassport.create(passport_params)
-    @passport.update!(citizen_id: @citizen.id)
-    @passport_people = @passport.passport_people.create(passport_people_params)
-    @citizen_relations = @citizen.citizen_relations.create(citizen_relation_params)
-    redirect_to root_path
+    if @citizen.valid?
+      @passport = CitizenPassport.create(passport_params)
+      @passport.update!(citizen_id: @citizen.id)
+      @passport_people = @passport.passport_people.create(passport_people_params)
+      @citizen_relations = @citizen.citizen_relations.create(citizen_relation_params)
+
+      redirect_to root_path
+    else
+      render 'new'
+    end
+
   end
 
   private
