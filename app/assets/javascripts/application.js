@@ -12,4 +12,5 @@
 //= require menu
 //= require slideshow
 //= require bootstrap-datepicker
+//= require datepicker
 //= require bootstrap-datepicker/core

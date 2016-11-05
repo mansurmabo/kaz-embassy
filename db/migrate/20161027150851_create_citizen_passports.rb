@@ -2,7 +2,7 @@ class CreateCitizenPassports < ActiveRecord::Migration
   def change
     create_table :citizen_passports do |t|
       t.integer :citizen_id
-      t.string :type
+      t.string :pass_type
       t.string :series
       t.string :number
       t.date :date_of_issue

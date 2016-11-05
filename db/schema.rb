@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20161102085728) do
 
   create_table "citizen_passports", force: :cascade do |t|
     t.integer  "citizen_id"
-    t.string   "type"
+    t.string   "pass_type"
     t.string   "series"
     t.string   "number"
     t.date     "date_of_issue"
