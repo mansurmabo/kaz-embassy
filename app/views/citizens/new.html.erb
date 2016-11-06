@@ -1,6 +1,5 @@
 <h3>Регистрационная карточка граждан Республики Казахстан, проживающих за границей</h3>
 <br>
-<% @citizen.build_citizen_passport if @citizen.citizen_passport.nil? %>
 <%= form_for @citizen, html: {class: "form-horizontal"} do |f| %>
     <div class="card_main">
       <h4>Основные данные (Ф.И.О. латинскими буквами)</h4>
@@ -87,6 +86,8 @@
               *</label>
             <div class="col-sm-9">
               <%= c.text_field :series, class: 'form-control', placeholder: t(:passport_series) %>
+              <small><%= render 'shared/error', object: @passport, field_name: :series %></small>
+
             </div>
           </div>
           <div class="form-group">
@@ -94,7 +95,7 @@
               *</label>
             <div class="col-sm-9">
               <%= c.text_field :number, class: 'form-control', placeholder: t(:passport_number) %>
-              <small><%= render 'shared/error', object: CitizenPassport.new, field_name: :number %></small>
+              <small><%= render 'shared/error', object: @passport, field_name: :number %></small>
             </div>
           </div>
           <div class="form-group">
@@ -107,6 +108,7 @@
                   <span class="glyphicon glyphicon-th"></span>
                 </div>
               </div>
+              <small><%= render 'shared/error', object: @passport, field_name: :date_of_issue %></small>
             </div>
           </div>
           <div class="form-group">
@@ -119,6 +121,7 @@
                   <span class="glyphicon glyphicon-th"></span>
                 </div>
               </div>
+              <small><%= render 'shared/error', object: @passport, field_name: :date_of_validity %></small>
             </div>
           </div>
           <div class="form-group">
@@ -126,7 +129,9 @@
               *</label>
             <div class="col-sm-9">
               <%= c.text_field :issued_by, class: 'form-control', placeholder: t(:passport_issued_by) %>
+              <small><%= render 'shared/error', object: @passport, field_name: :issued_by %></small>
             </div>
+
           </div>
         </div>
         <br>

@@ -2,10 +2,12 @@ class CitizensController < ApplicationController
 
   def new
     @citizen = Citizen.new
+    @passport = @citizen.build_citizen_passport
   end
 
   def create
     @citizen = Citizen.create(citizen_params)
+    @passport = @citizen.build_citizen_passport
     if @citizen.valid?
       @citizen_relations = @citizen.citizen_relations.create(citizen_relation_params)
       @passport = @citizen.create_citizen_passport(passport_params)
