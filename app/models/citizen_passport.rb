@@ -1,6 +1,6 @@
 class CitizenPassport < ActiveRecord::Base
   belongs_to :citizen
-  has_many :passport_people
+  has_many :passport_people, dependent: :destroy
 
   accepts_nested_attributes_for :passport_people
 

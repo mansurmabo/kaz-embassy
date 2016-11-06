@@ -2,27 +2,23 @@ ActiveAdmin.register Citizen do
 
   config.per_page = 20
 
+  filter :name_or_surname_cont, as: :string, label: "ФИО"
+
   index do
     selectable_column
     id_column
     column t :photo do |img|
-      image_tag(img.photo.url(:thumb))
+      image_tag(img.photo.url(:thumb)) if img.photo.present?
     end
     column 'ФИО' do |citizen|
       span(link_to("#{citizen.surname} #{citizen.name} #{citizen.father_name}", admin_citizen_path(citizen)))
     end
     column t :birthday
-    column t :nationality
-    column t :marital_status
-    column t :education
-    column t :departure_reason
-    column t :last_kaz_address
-    column t :kaz_work_place
-    column t :current_country
-    column t :current_address
     column t :phone
     column :created_at
-    actions
+    actions defaults: false do |citizen|
+      span(link_to "Печать", pdf_admin_citizen_path(citizen.id))
+    end
   end
 
   show do |citizen|
@@ -33,12 +29,28 @@ ActiveAdmin.register Citizen do
         row t :photo do |img|
           image_tag(img.photo.url(:medium))
         end
-        row t :surname
-        row t :name
-        row t :father_name
-        row t :birthday
-        row t :nationality
-        row t :marital_status
+        row t :surname do
+          citizen.surname
+        end
+        row t :name do
+          citizen.name
+        end
+        row t :father_name do
+          citizen.father_name
+        end
+        row t :birthday do
+          citizen.birthday
+        end
+        row t :nationality do
+          citizen.nationality
+        end
+        row t :marital_status do
+          citizen.marital_status
+        end
+        row t :spouse_name do
+          citizen.spouse_name
+        end
+
       end
     end
     panel "Паспортные данные" do
@@ -81,13 +93,27 @@ ActiveAdmin.register Citizen do
     panel "Дополнительные данные" do
       attributes_table_for citizen do
 
-        row t :education
-        row t :departure_reason
-        row t :last_kaz_address
-        row t :kaz_work_place
-        row t :current_country
-        row t :current_address
-        row t :phone
+        row t :education do
+          citizen.education
+        end
+        row t :departure_reason do
+          citizen.departure_reason
+        end
+        row t :last_kaz_address do
+          citizen.last_kaz_address
+        end
+        row t :kaz_work_place do
+          citizen.kaz_work_place
+        end
+        row t :current_country do
+          citizen.current_country
+        end
+        row t :current_address do
+          citizen.current_address
+        end
+        row t :phone do
+          citizen.phone
+        end
       end
     end
 
@@ -111,5 +137,11 @@ ActiveAdmin.register Citizen do
         end
       end
     end
+  end
+
+  member_action :pdf, method: :get do
+      @citizen = Citizen.find(params[:id])
+      output = CitizenCard.new(@citizen)
+      send_data output.render, :type => 'application/pdf', :filename => "#{@citizen.surname}-#{@citizen.name}.pdf"
   end
 end
