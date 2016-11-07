@@ -17,7 +17,7 @@ ActiveAdmin.register Citizen do
     column t :phone
     column :created_at
     actions defaults: false do |citizen|
-      span(link_to "Печать", pdf_admin_citizen_path(citizen.id))
+      span(link_to "Печать", registration_data_admin_citizen_path(citizen.id), target: "_blank")
     end
   end
 
@@ -139,9 +139,9 @@ ActiveAdmin.register Citizen do
     end
   end
 
-  member_action :pdf, method: :get do
+  member_action :registration_data, method: :get do
       @citizen = Citizen.find(params[:id])
       output = CitizenCard.new(@citizen)
-      send_data output.render, :type => 'application/pdf', :filename => "#{@citizen.surname}-#{@citizen.name}.pdf"
+      send_data output.render, :type => 'application/pdf', :filename => "#{@citizen.surname}-#{@citizen.name}.pdf", :disposition => "inline"
   end
 end
