@@ -6,7 +6,6 @@ class CitizensController < ApplicationController
   end
 
   def create
-    binding.pry
     @citizen = Citizen.new(citizen_params)
     @passport = @citizen.build_citizen_passport
     @passport.update(passport_params)
