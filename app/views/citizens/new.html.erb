@@ -136,7 +136,7 @@
         </div>
         <br>
         <div class="card_members">
-          <h4>Лица, внесенные в паспорт</h4>
+          <h4>Лица внесенные в паспорт</h4>
           <hr>
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
@@ -147,7 +147,12 @@
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
             <div class="col-sm-9">
-              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+              <div class="input-group date">
+                <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'datepicker form-control', placeholder: t(:birthday) %>
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -160,7 +165,12 @@
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
             <div class="col-sm-9">
-              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+              <div class="input-group date">
+                <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'datepicker form-control', placeholder: t(:birthday) %>
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -173,7 +183,12 @@
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
             <div class="col-sm-9">
-              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+              <div class="input-group date">
+                <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'datepicker form-control', placeholder: t(:birthday) %>
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -186,7 +201,12 @@
           <div class="form-group">
             <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
             <div class="col-sm-9">
-              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+              <div class="input-group date">
+                <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'datepicker form-control', placeholder: t(:birthday) %>
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+                </div>
+              </div>
             </div>
           </div>
 

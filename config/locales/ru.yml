@@ -35,6 +35,7 @@ ru:
   passport_issued_by: "Кем выдан"
   fullname: "ФИО"
   send: "Отправить"
+  register_card: "Форма регистрации на Консульский учет граждан Казахстана"
   views:
     pagination:
       first: "&laquo;"
