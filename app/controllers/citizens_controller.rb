@@ -6,7 +6,8 @@ class CitizensController < ApplicationController
   end
 
   def create
-    @citizen = Citizen.create(citizen_params)
+    binding.pry
+    @citizen = Citizen.new(citizen_params)
     @passport = @citizen.build_citizen_passport
     @passport.update(passport_params)
     if @citizen.save
@@ -41,9 +42,9 @@ class CitizensController < ApplicationController
             :phone,
             citizen_passport_attributes: [:pass_type, :series, :number,
                                           :date_of_issue, :date_of_validity,
-                                          :issued_by,
-                                          passport_person: [:fullname, :birthday]
+                                          :issued_by
             ]],
+        passport_people: [:fullname, :birthday],
         citizen_relation: [:fullname, :in_kz]
 
     )
@@ -58,7 +59,7 @@ class CitizensController < ApplicationController
   end
 
   def passport_people_params
-    permitted_params[:citizen][:citizen_passport_attributes][:passport_person]
+    permitted_params[:passport_people].map { |pp| pp unless pp[:fullname].empty? }
   end
 
   def citizen_relation_params

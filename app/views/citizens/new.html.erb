@@ -138,20 +138,58 @@
         <div class="card_members">
           <h4>Лица, внесенные в паспорт</h4>
           <hr>
-          <%= c.fields_for :passport_person do |pp| %>
-              <div class="form-group">
-                <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
-                <div class="col-sm-9">
-                  <%= pp.text_field :fullname, class: 'form-control', placeholder: t(:fullname) %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
-                <div class="col-sm-9">
-                  <%= pp.text_field :birthday, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
-                </div>
-              </div>
-          <% end %>
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][fullname]', nil, class: 'form-control', placeholder: t(:fullname) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][fullname]', nil, class: 'form-control', placeholder: t(:fullname) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][fullname]', nil, class: 'form-control', placeholder: t(:fullname) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_fullname' class="col-sm-3 control-label"><%= t(:fullname) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][fullname]', nil, class: 'form-control', placeholder: t(:fullname) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for='citizen_citizen_passport_attributes_passport_person_birthday' class="col-sm-3 control-label"><%= t(:birthday) %></label>
+            <div class="col-sm-9">
+              <%= text_field_tag 'passport_people[][birthday]', nil, 'data-provide' => 'datepicker', class: 'form-control', placeholder: t(:birthday) %>
+            </div>
+          </div>
+
         </div>
     <% end %>
     <br>
