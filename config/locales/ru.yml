@@ -58,6 +58,7 @@ ru:
       user: "Пользователь"
       co_event: "События сотрудничества"
       headline: "Верхняя лента"
+      citizen: "Учет граждан"
     attributes:
       article:
         image: "Изображение"

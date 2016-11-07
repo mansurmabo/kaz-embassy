@@ -1,6 +1,7 @@
 ActiveAdmin.register Citizen do
 
   config.per_page = 20
+  actions :all, :except => [:new]
 
   filter :name_or_surname_cont, as: :string, label: "ФИО"
 
@@ -13,9 +14,15 @@ ActiveAdmin.register Citizen do
     column 'ФИО' do |citizen|
       span(link_to("#{citizen.surname} #{citizen.name} #{citizen.father_name}", admin_citizen_path(citizen)))
     end
-    column t :birthday
-    column t :phone
-    column :created_at
+    column t :birthday do |citizen|
+      citizen.birthday
+    end
+    column t :phone do |citizen|
+      citizen.phone
+    end
+    column "Дата регистрации" do |citizen|
+      citizen.created_at
+    end
     actions defaults: false do |citizen|
       span(link_to "Печать", registration_data_admin_citizen_path(citizen.id), target: "_blank")
     end
