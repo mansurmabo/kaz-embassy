@@ -1,3 +1,5 @@
 SECRET_KEY_BASE: 8c913510fbef598d846cb27543293cabfa8d1040dbc331b3de5e0938ac658ca7c7570a4e6c9f09abf79fce51dc6a98a2e84cd55e6d50268a9eb916a05cfc7c03
 DB_USERNAME: deploy
 DB_PASSWORD: 220888ok
+gmail_username: kazembassykg@gmail.com
+gmail_password: embassykg

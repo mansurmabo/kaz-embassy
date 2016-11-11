@@ -1,5 +1,5 @@
 ActiveAdmin.register Citizen do
-
+  menu false
   config.per_page = 20
   actions :all, :except => [:new]
 

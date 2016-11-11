@@ -12,6 +12,7 @@ class CitizensController < ApplicationController
     if @citizen.save
       @citizen_relations = @citizen.citizen_relations.create(citizen_relation_params)
       @passport_people = @passport.passport_people.create(passport_people_params)
+      CitizenMailer.new_citizen(@citizen).deliver
       redirect_to root_path
     else
       render 'new'

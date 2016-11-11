@@ -16,6 +16,9 @@ ActiveAdmin.setup do |config|
       menu.add :label => "Галерея", priority: 3 do |cat|
         cat.add :label => "Изображения", :url => "/admin/galleries"
         cat.add :label => "Категория изображений", :url => "/admin/images_categories"
+        end
+      menu.add :label => "Консульский отдел", priority: 4 do |cat|
+        cat.add :label => "Учет граждан", :url => "/admin/citizens"
       end
     end
   end

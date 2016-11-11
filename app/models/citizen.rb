@@ -11,4 +11,7 @@ class Citizen < ActiveRecord::Base
   validates_presence_of :name, :surname, :father_name, :birthday, :nationality, :education, :departure_reason, :last_kaz_address, :kaz_work_place, :current_country, :current_address, :phone
 
 
+  def fullname
+    self.surname + self.name + self.father_name
+  end
 end
