@@ -17,10 +17,6 @@
             <li>
               <%= link_to t("events"), co_events_path %>
             </li>
-          <% elsif category.id == 3 %>
-              <li>
-                <%= link_to t(:register_card), new_citizen_path %>
-              </li>
           <% end %>
           <% Page.where(category_id: category.id).each do |page| %>
               <li>
