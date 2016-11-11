@@ -35,7 +35,7 @@ en:
   passport_issued_by: "Issued by"
   fullname: "Fullname"
   send: "Send"
-  register_card: 'The form of registration in the consular register citizens of Kazakhstan'
+  register_card: "Consular registration (online)"
   views:
     pagination:
       first: "&laquo;"
