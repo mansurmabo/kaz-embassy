@@ -9,6 +9,7 @@ class Ability
     elsif user.role == 'moder'
       can :read, :all
       can :manage, Article
+      can :manage, Citizen
       can :manage, Category
       can :manage, Type
       can :manage, Page

@@ -1,6 +1,6 @@
 ActiveAdmin.register Citizen do
   config.per_page = 20
-  actions :all, :except => [:new]
+  actions :all, :except => [:new, :edit, :update]
 
   filter :name_or_surname_cont, as: :string, label: "ФИО"
 
