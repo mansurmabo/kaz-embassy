@@ -34,7 +34,7 @@ ActiveAdmin.register Citizen do
       attributes_table_for citizen do
 
         row t :photo do |img|
-          image_tag(img.photo.url(:medium))
+          image_tag(img.photo.url(:medium)) if img.photo.present?
         end
         row t :surname do
           citizen.surname
