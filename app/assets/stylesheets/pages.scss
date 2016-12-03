@@ -85,11 +85,15 @@ ul, ol {
 
 .social {
   //display: inline-block;
+  width: 30px;
   margin: 10px;
-  margin-left: 30px;
+  margin-left: 45px;
+  @include md{
+    margin-left: 30px;
+  }
 }
 .social img {
-  margin-right: 30px;
+  //margin-right: 30px;
   padding-bottom: 2px;
   width: 30px;
   -webkit-filter: sepia(100%);
@@ -102,8 +106,15 @@ ul, ol {
   filter: sepia(0);
 }
 .top__text-position {
-  margin: 0px 25px 10px 100px;
+  margin: 0px 25px 10px 0;
   padding: 10px;
+  @include lg{
+    margin-left: 90px;
+  }
+  @include md{
+    padding: 0;
+    line-height: 30px;
+  }
 }
 .top-text {
   text-decoration: none;
@@ -112,6 +123,9 @@ ul, ol {
   font-size: 24px;
   font-weight: 600;
   color: #286191;
+  //@include md{
+  //  background: red;
+  //}
 }
 
 .lang {

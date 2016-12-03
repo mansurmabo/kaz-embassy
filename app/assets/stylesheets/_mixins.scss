@@ -1,0 +1,20 @@
+@mixin lg{
+  @media (max-width: 1199px){
+    @content
+  }
+}
+@mixin md{
+   @media (max-width: 991px){
+     @content
+   }
+}
+@mixin tablet{
+   @media (max-width: 768px){
+     @content
+   }
+}
+@mixin phone{
+   @media (max-width: 480px){
+     @content
+   }
+}
