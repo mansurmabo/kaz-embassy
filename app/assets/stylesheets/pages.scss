@@ -14,18 +14,19 @@ body {
 .table td, .table th, .table tr {
   border: none;
 }
-.container {
-  margin-bottom: 50px;
-
+.container-1{
+  width: 100%;
+  min-width:320px;
+  max-width: 1170px;
+  margin: 0 auto 50px;
+  padding: 0 15px;
 }
 .nav-pills  {
-  background-color: #ffe160;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 700;
 
 }
-
 .nav-pills > li > a {
   text-decoration: none;
   text-align: center;
@@ -49,42 +50,45 @@ body {
   text-decoration: none;
   color: #337ab7;
 }
-
-
 ul, ol {
   margin: 0;
   padding-left: 1.5em;
   list-style-type: none;
 }
-.row {
-  margin: 0px;
-  background-color: #fff;
-  border-radius: 4px;
-
-}
-.col-md-3 {
-  padding: 0px;
-}
-.col-md-9 {
-  padding-left: 5px;
-  padding-right: 0px;
-}
-
 .top {
   margin: 0;
   width: 100%;
   height: 144px;
   background-image: image_url('header.png');
-  .row {
-    background-color: transparent;
-  }
   a:hover {
     text-decoration: none;
   }
 }
-
+.social-block{
+  float: left;
+  width: 27%;
+  @include lg{
+    width:30%;;
+  }
+}
+.text-block{
+  float: right;
+  width: 69%;
+  margin-right: 4%;
+  padding: 10px 0 0 0;
+  text-align: center;
+  @include lg{
+    width:65%;
+  }
+  a{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #286191;
+  }
+}
 .social {
-  //display: inline-block;
   width: 30px;
   margin: 10px;
   margin-left: 45px;
@@ -93,7 +97,6 @@ ul, ol {
   }
 }
 .social img {
-  //margin-right: 30px;
   padding-bottom: 2px;
   width: 30px;
   -webkit-filter: sepia(100%);
@@ -105,28 +108,6 @@ ul, ol {
   -webkit-filter: sepia(0);
   filter: sepia(0);
 }
-.top__text-position {
-  margin: 0px 25px 10px 0;
-  padding: 10px;
-  @include lg{
-    margin-left: 90px;
-  }
-  @include md{
-    padding: 0;
-    line-height: 30px;
-  }
-}
-.top-text {
-  text-decoration: none;
-  text-align: center;
-  vertical-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: #286191;
-  //@include md{
-  //  background: red;
-  //}
-}
 
 .lang {
   float: right;
@@ -134,7 +115,49 @@ ul, ol {
   background-color: #ffe160;
 }
 
+// information-block
+.information-block{
+  background: #fff;
+}
+.sidebar{
+  width: 25%;
+  float: left;
 
+}
+.content-block{
+  float: right;
+  width: 74.5%;
+}
+.menu-in-content{
+  background-color: #ffe160;
+}
+.menu-block{
+  width:60%;
+  float: left;
+  //@include md{
+  //  width: 100%;
+  //  margin-bottom: 10px;
+  //  float: none;
+  //}
+}
+
+.search-block{
+  width: 40%;
+  float: left;
+  text-align: right;
+  //@include md{
+  //  width: 100%;
+  //  float: none;
+  //}
+  .form-row{
+    padding:3px 17px 3px 0;
+    .input-txt{
+      display: inline-block;
+      width: 162px;
+      margin: 0 12px 0 0;
+    }
+  }
+}
 .content {
   background-color: #ffffff;
   border-radius: 4px;

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-1">
   <% headlines = Headline.where(show: true)
      if headlines.any? && headlines.last.present?
        line = Headline.last %>
@@ -38,7 +38,6 @@
       </div>
   <% end %>
   <div class="top">
-    <div class="row">
       <div class="lang">
         <span>
           <%= link_to_unless_current "Қаз", locale: "kz" %>
@@ -46,7 +45,7 @@
           <%= link_to_unless_current "Eng", locale: "en" %>
         </span>
       </div>
-      <div class="col-md-3 col-sm-4">
+      <div class="social-block">
         <div class="social">
           <a href="https://www.facebook.com/kaz.embassykg/" target="_blank"><img src="/images/icons/facebook.png"/></a>
           <a href="https://twitter.com/kazembassykg" target="_blank"><img src="/images/icons/twitter.png"/></a>
@@ -54,63 +53,60 @@
           <a href="https://www.youtube.com/channel/UCcnpGGodLIPZwOgeVUPfCrw" target="_blank"><img src="/images/icons/youtube.png"/></a>
         </div>
       </div>
-      <div class="col-md-9 col-sm-8">
-        <a href="/">
-          <div class="top__text-position">
-            <div class="top-text">
-              <span><%= t 'top-text' %> </span>
-            </div>
-          </div>
-        </a>
+      <div class="text-block">
+        <a href="/"><%= t 'top-text' %></a>
       </div>
-    </div>
   </div>
   <div>
     <%= render "articles/slideshow" %>
   </div>
-  <div class="row">
-    <div class="col-xs-4 col-md-3">
+  <div class="information-block clearfix">
+    <div class="sidebar">
       <div><%= render "layouts/menu" %></div>
       <div><%= render "events/calendar_links" %></div>
       <div><%= render "layouts/third_party_links" %></div>
     </div>
-    <div class="col-xs-14 col-md-9">
-      <ul class="nav nav-pills">
-        <li class='<%= "active" if current_page?(articles_path) %>'><%= link_to t("news"), articles_path %></li>
-        <li class='<%= "active" if current_page?(manifestos_path) %>'><%= link_to t("manifestos"), manifestos_path %></li>
-        <li class='<%= "active" if current_page?(events_path) %>'><%= link_to t("calendar"), events_path %></li>
-        <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            <%= t "gallery" %><span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <%= link_to t("all"), galleries_path %>
-            </li>
-            <% ImagesCategory.all.each do |cat| %>
+    <div class="content-block">
+      <div class="menu-in-content clearfix">
+        <div class="menu-block">
+          <ul class="nav nav-pills">
+            <li class='<%= "active" if current_page?(articles_path) %>'><%= link_to t("news"), articles_path %></li>
+            <li class='<%= "active" if current_page?(manifestos_path) %>'><%= link_to t("manifestos"), manifestos_path %></li>
+            <li class='<%= "active" if current_page?(events_path) %>'><%= link_to t("calendar"), events_path %></li>
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <%= t "gallery" %><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
                 <li>
-                  <% if I18n.locale == :en && cat.en_title.present? %>
-                      <%= link_to cat.en_title, get_categories_path(cat) %>
-                  <% else %>
-                      <%= link_to cat.title, get_categories_path(cat) %>
-                  <% end %>
+                  <%= link_to t("all"), galleries_path %>
                 </li>
-            <% end %>
+                <% ImagesCategory.all.each do |cat| %>
+                    <li>
+                      <% if I18n.locale == :en && cat.en_title.present? %>
+                          <%= link_to cat.en_title, get_categories_path(cat) %>
+                      <% else %>
+                          <%= link_to cat.title, get_categories_path(cat) %>
+                      <% end %>
+                    </li>
+                <% end %>
+              </ul>
+            </li>
           </ul>
-        </li>
-        <li class="pull-right">
+        </div>
+        <div class="search-block">
           <%= form_tag("/#{I18n.locale}/search", method: "get", class: "form-horizontal") do %>
-              <div class="form-group">
-                <div class="col-md-8">
-                  <%= text_field_tag :q, params[:q], class: 'form-control' %>
-                </div>
-                <div class="col-md-3">
+              <div class="form-row">
+                <span>
+                  <%= text_field_tag :q, params[:q], class: 'form-control input-txt'%>
+                </span>
+                <span>
                   <%= submit_tag t("search"), name: nil, class: 'btn btn-primary' %>
-                </div>
+                </span>
               </div>
           <% end %>
-        </li>
-      </ul>
+        </div>
+      </div>
       <div class="content">
         <%= yield %>
       </div>
