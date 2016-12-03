@@ -8,6 +8,16 @@
     @content
   }
 }
+@mixin tablet{
+  @media (max-width: 767px){
+    @content
+  }
+}
+@mixin mini-tablet{
+  @media (max-width: 639px){
+    @content
+  }
+}
 
 %flex-block{
   display: -webkit-box ;
