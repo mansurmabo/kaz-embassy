@@ -1,7 +1,7 @@
 ActiveAdmin.setup do |config|
   config.register_javascript 'ckeditor/init.js'
   config.site_title = "kaz-emb.kg"
-  config.show_comments_in_menu = false
+  #config.show_comments_in_menu = false
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
