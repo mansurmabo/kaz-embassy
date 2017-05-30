@@ -10,5 +10,6 @@ module KazEmbKg
      config.i18n.available_locales = [:ru, :en, :kz]
      config.time_zone = 'Astana'
      config.active_record.raise_in_transactional_callbacks = true
+     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end
