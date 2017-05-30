@@ -11,4 +11,3 @@ Rails.application.config.assets.paths << Rails.root.join("app","assets")
 # application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.
  Rails.application.config.assets.precompile += %w( application.js application.scss )
  Rails.application.config.assets.precompile += %w( jquery.mosaicflow.min.js ckeditor/* )
- Rails.application.config.assets.precompile += Ckeditor.assets
