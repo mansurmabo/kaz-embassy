@@ -3,7 +3,7 @@ class SearchController < ApplicationController
     if params[:q].nil?
       @results
     else
-      @results = Article.search params[:q], page: params[:page], per_page: 20
+      @results = Article.search(params[:q], page: params[:page], per_page: 20)
     end
   end
 end
