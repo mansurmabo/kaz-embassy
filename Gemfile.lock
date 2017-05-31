@@ -314,14 +314,9 @@ DEPENDENCIES
   fullcalendar-rails (= 2.6.1.0)
   jbuilder (~> 2.0)
   jquery-rails (= 4.1.1)
-<<<<<<< HEAD
   jquery-ui-rails (= 5.0.5)
   kaminari (= 0.15)
   momentjs-rails (= 2.9.0)
-=======
-  kaminari (= 0.15)
-  momentjs-rails
->>>>>>> 75339d1dece82c1413dcc04c089ea5a22a1d985b
   owlcarousel-rails
   paperclip (~> 4.3)
   pg
