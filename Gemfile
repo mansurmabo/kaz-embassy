@@ -59,7 +59,7 @@ end
 gem 'devise', '3.5.6'
 gem 'activeadmin', '1.0.0.pre2'
 gem 'cancancan', '1.13.1'
-gem 'ckeditor', '4.1.6'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'paperclip', '~> 4.3'
 gem 'bootstrap-sass'
 gem 'owlcarousel-rails'

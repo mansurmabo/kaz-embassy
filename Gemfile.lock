@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 238576b0381e8f51590d2179c5bec7cda672530a
+  specs:
+    ckeditor (4.2.3)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,9 +97,6 @@ GEM
       capistrano (~> 3.7)
       capistrano-bundler
       puma (~> 3.4)
-    ckeditor (4.1.6)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -306,7 +311,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
-  ckeditor (= 4.1.6)
+  ckeditor!
   coffee-rails (~> 4.1.0)
   devise (= 3.5.6)
   faker
