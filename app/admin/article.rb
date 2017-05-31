@@ -7,7 +7,7 @@ ActiveAdmin.register Article do
     selectable_column
     id_column
     column :image do |img|
-      image_tag(img.image.url(:thumb))
+      image_tag(img.image.url(:thumb)) if img.image.present?
     end
     column :title
     column :kz_title
@@ -21,7 +21,7 @@ ActiveAdmin.register Article do
   show do
     attributes_table do
       row :image do |img|
-        image_tag(img.image.url(:medium))
+        image_tag(img.image.url(:medium)) if img.image.present?
       end
       row :type_id do |article|
         Type.find(article.type_id).name if article.type_id.present?
@@ -56,7 +56,7 @@ ActiveAdmin.register Article do
           f.input :title
           f.input :type_id, :as => :select, :collection => Type.all, :prompt => 'Выберите категорию новостей'
           f.input :content, :input_html => {:class => "ckeditor"}
-          f.input :image, as: :file, :hint => f.image_tag(f.object.image.url(:thumb))
+          f.input :image, as: :file,  :hint => f.image_tag(f.object.image.present? ? f.object.image.url(:thumb) : '')
           f.input :created_at, :as => :datepicker
         end
       end
