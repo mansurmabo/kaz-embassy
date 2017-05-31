@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '4.1.1'
+gem 'jquery-ui-rails', '5.0.5'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -55,20 +56,20 @@ group :development do
   gem 'pry-byebug'
 end
 
-gem 'devise'
+gem 'devise', '3.5.6'
 gem 'activeadmin', '1.0.0.pre2'
-gem 'cancancan'
+gem 'cancancan', '1.13.1'
 gem 'ckeditor', '4.1.6'
 gem 'paperclip', '~> 4.3'
 gem 'bootstrap-sass'
 gem 'owlcarousel-rails'
-gem 'kaminari'
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
+gem 'kaminari', '0.15'
+gem 'fullcalendar-rails', '2.6.1.0'
+gem 'momentjs-rails', '2.9.0'
 gem 'searchkick'
 gem 'puma'
 gem 'figaro'
 gem 'rails-i18n', '~> 4.0.0'
-gem 'active_admin_theme'
-gem 'bootstrap-datepicker-rails'
-gem 'prawn'
+gem 'active_admin_theme', '1.0.3'
+gem 'bootstrap-datepicker-rails', '1.6.1.1'
+gem 'prawn', '2.1.0'
