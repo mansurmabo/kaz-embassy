@@ -1,9 +1,9 @@
 class SearchController < ApplicationController
   def search
-    if params[:q].nil?
-      @results
+    if params[:q].present?
+      @results = Article.search_by_title_content(params[:q])
     else
-      @results = Article.search(params[:q], page: params[:page], per_page: 20)
+      @results
     end
   end
 end
