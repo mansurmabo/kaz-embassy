@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
+  layout false
+
   def index
+    redirect_to 'http://mfa.gov.kz/bishkek'
   end
 
   def show
